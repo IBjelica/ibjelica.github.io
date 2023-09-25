@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: local('Helvetica Neue Light'), local('Helvetica-Neue-Light'),
+      url('/src/fonts/HelveticaNeueCyr-Light.woff2') format('woff2'),
+      url('/src/fonts/HelveticaNeueCyr-Light.woff') format('woff'),
+      url('/src/fonts/HelveticaNeueCyr-Light.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* @font-face {
+  font-family: 'Saint Regular';
+  src: local('SaintRegular'), local('Saint-Regular'),
+      url('/src/fonts/SaintRegular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+} */
+
+#root {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow: clip;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+
+  /* font-family: 'Saint Regular'; */
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: thin;
+}
