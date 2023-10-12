@@ -38,45 +38,128 @@ function MainSVG() {
         })
     }, [screenSize, spacing])
 
+    let y = 150
+    let space = getCurrentSpacing()
+    let dy = y + space.elHeight + space.gap
+
     return (
         <svg
-            className={'max-w-['+ screenSize.width +'] max-h-['+ screenSize.height +']'}
+            // className={'max-w-['+ screenSize.width +'] max-h-['+ screenSize.height +']'}
+            width={"100%"}
+            height={"100%"}
             viewBox={'0 0 ' + screenSize.width + ' ' + screenSize.height}>
-          {/* <g className='max-w-full'> */}
-            {/* <AnimatedText
-                yy={50}
-                fontSize={getCurrentSpacing().elHeight}
-                // mainfont={"bla"}
-                // hoverfont={"bla"}
-                text="Nothing"
-            /> */}
-            <Letter
-                text="N"
-                dx={0}
-                yy={50}
-                fontSize={getCurrentSpacing().elHeight}
-            />
-            <Letter
-                text="o"
-                dx={200}
-                yy={50}
-                fontSize={getCurrentSpacing().elHeight}
-            />
-            {/* <AnimatedText
-                xx={'1%'}
-                yy={spacing.elHeight + spacing.gap + 'px'}
-                // mainFont={mainBuffer.mainFont}
-                // hoverFont={secondaryBuffer.secondaryFont}
-                text="to see"
-            />
-            <AnimatedText
-                xx={''}
-                yy={( spacing.elHeight * 2 ) + ( spacing.gap * 2 ) + 'px'}
-                // mainFont={mainBuffer.mainFont}
-                // hoverFont={secondaryBuffer.secondaryFont}
-                text="here"
-            /> */}
-          {/* </g> */}
+            
+            <text x={0} y={0} className="word">
+                <Letter
+                    text="N"
+                    // dx={0}
+                    // yy={y}
+                    fontSize={y}
+                />
+                {/* <Letter
+                    text="O"
+                    // dx={180}
+                    // yy={y}
+                    fontSize={y}
+                /> */}
+                {/* <Letter
+                    text="T"
+                    dx={360}
+                    yy={y}
+                    fontSize={y}
+                />
+                <Letter
+                    text="H"
+                    dx={540}
+                    yy={y}
+                    fontSize={y}
+                />
+                <Letter
+                    text="I"
+                    dx={720}
+                    yy={y}
+                    fontSize={y}
+                />
+                <Letter
+                    text="N"
+                    dx={800}
+                    yy={y}
+                    fontSize={y}
+                />
+                <Letter
+                    text="G"
+                    dx={980}
+                    yy={y}
+                    fontSize={y}
+                /> */}
+            </text>
+            
+            {/* <text className="word">
+                <Letter
+                    text="T"
+                    dx={0}
+                    // yy={dy}
+                    fontSize={y}
+                />
+                <Letter
+                    text="O"
+                    dx={180}
+                    // yy={dy}
+                    fontSize={y}
+                />
+                <Letter
+                    text=" "
+                    dx={360}
+                    // yy={dy}
+                    fontSize={y}
+                />
+                <Letter
+                    text="S"
+                    dx={540}
+                    // yy={dy}
+                    fontSize={y}
+                />
+                <Letter
+                    text="E"
+                    dx={720}
+                    // yy={dy}
+                    fontSize={y}
+                />
+                <Letter
+                    text="E"
+                    dx={800}
+                    // yy={dy}
+                    fontSize={y}
+                />
+            </text>
+
+            
+            <text className="word">
+                <Letter
+                    text="H"
+                    dx={0}
+                    // yy={dy}
+                    fontSize={y}
+                />
+                <Letter
+                    text="E"
+                    dx={180}
+                    // yy={dy}
+                    fontSize={y}
+                />
+                <Letter
+                    text="R"
+                    dx={360}
+                    // yy={dy}
+                    fontSize={y}
+                />
+                <Letter
+                    text="E"
+                    dx={540}
+                    // yy={dy}
+                    fontSize={y}
+                />
+            </text> */}
         </svg>
     )
 }

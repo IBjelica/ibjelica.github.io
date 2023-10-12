@@ -20,8 +20,9 @@ const AnimatedText = (props) => {
                         <Letter
                             key={id}
                             text={letter}
-                            dx={dx}
+                            xx={props.xx}
                             yy={props.yy}
+                            dx={dx}
                             fontSize={props.fontSize}
                         />
                     )
