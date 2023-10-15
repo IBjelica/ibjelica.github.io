@@ -35,3 +35,11 @@ body {
   font-family: 'Helvetica Neue', sans-serif;
   font-weight: thin;
 }
+
+svg {
+  overflow: visible;
+}
+
+.trailer > div {
+  background-image: linear-gradient(45deg, rgba(140, 0, 255, .8) 0%, rgba(2, 242, 114, .9) 100%)
+}

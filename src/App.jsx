@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react'
-import './App.css'
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+import './assets/App.css'
 import Trailer from './components/Trailer'
 import Letter from './components/Letter'
+import DotsLink from "./components/DotsLink"
 
 function App() {
   
   return (
     <>
       <div className="group/screen w-screen h-screen p-4 flex flex-col justify-between">
-
-        <div className="row max-w-full h-[25%] flex justify-start align-baseline gap-7">
+//Todo: height for smaller screens
+        <div className="row max-w-full h-[min(25vh,_14vw)] flex justify-start align-baseline gap-7">
           <Letter
             char="n"
           />
@@ -33,7 +35,7 @@ function App() {
           />
         </div>
 
-        <div className="row max-w-full h-[25%] flex justify-start align-baseline gap-7">
+        <div className="row max-w-full h-[min(25vh,_14vw)] flex justify-start align-baseline gap-7">
           <Letter
             char="t"
           />
@@ -42,7 +44,7 @@ function App() {
           />
 
           <Letter
-            char=" "
+            char=" "//Todo: hidden link to portfolio
           />
           
           <Letter
@@ -56,7 +58,7 @@ function App() {
           />
         </div>
 
-        <div className="row max-w-full h-[25%] flex justify-start align-baseline gap-7">
+        <div className="row max-w-full h-[min(25vh,_14vw)] flex justify-start align-baseline gap-7">
           <Letter
             char="h"
           />
@@ -71,19 +73,7 @@ function App() {
           />
         </div>
         
-        <a className='fixed bottom-[16px] right-[16px]' href='#'>
-          <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49" viewBox="0 0 49 49" fill="none">
-            <circle cx="7.13543" cy="7.13518" r="7.13543" fill="#495199"/>
-            <circle cx="7.13543" cy="24.4997" r="7.13543" fill="#495199"/>
-            <circle cx="7.13543" cy="41.8642" r="7.13543" fill="#495199"/>
-            <circle cx="24.4997" cy="7.13518" r="7.13543" fill="#495199"/>
-            <circle cx="24.4997" cy="24.4997" r="7.13543" fill="#495199"/>
-            <circle cx="24.4997" cy="41.8642" r="7.13543" fill="#495199"/>
-            <circle cx="41.8644" cy="7.13518" r="7.13543" fill="#495199"/>
-            <circle cx="41.8644" cy="24.4997" r="7.13543" fill="#495199"/>
-            <circle cx="41.8644" cy="41.8642" r="7.13543" fill="#495199"/>
-          </svg>
-        </a>
+        <DotsLink />
 
         <Trailer/>
       </div>

@@ -1,22 +1,17 @@
-import { useState, useEffect } from 'react'
-import chars from "./letters/chars.jsx"
+import chars from "../data/chars.jsx"
 import parse from "html-react-parser"
 
 const Letter = (props) => {
-    let char = props.char
+    const { char } = props;
 
-    const letter = () => {
-        return (
-            chars.filter( l => l.char === char)[0].svg
-        )
-    }
+    const svg = chars.find((l) => l.char === char)?.svg;
 
 //Todo: shorten tailwind classNames
 
     return (
-        <div className={"group/letters relative alternating-letter h-full w-auto"}>
-            {letter() ? parse( letter() ) : ""}
-        </div>
+        <svg className="letter h-full w-auto max-w-full ml-4 mr-4" width="100%" height="100%" viewBox="0 0 150 190" fill="none">
+            { svg && parse(svg) }
+        </svg>
     )
 };
 
