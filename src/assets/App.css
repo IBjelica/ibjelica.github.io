@@ -9,14 +9,16 @@
   font-display: swap;
 }
 
-/* @font-face {
-  font-family: 'Saint Regular';
-  src: local('SaintRegular'), local('Saint-Regular'),
-      url('/src/fonts/SaintRegular.ttf') format('truetype');
+@font-face {
+  font-family: 'RabbitHole';
+  src: local('RabbitHole'), local('RabbitHole'),
+      /* url('/src/fonts/HelveticaNeueCyr-Light.woff2') format('woff2'),
+      url('/src/fonts/HelveticaNeueCyr-Light.woff') format('woff'), */
+      url('/src/fonts/RabbitHole-DisplayTRIAL-VERSION-1.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-} */
+}
 
 #root {
   margin: 0;
@@ -31,9 +33,12 @@ body {
   height: 100vh;
   width: 100vw;
 
-  /* font-family: 'Saint Regular'; */
   font-family: 'Helvetica Neue', sans-serif;
-  font-weight: thin;
+  font-size: 16px;
+}
+
+body .wacky-word {
+  font-family: 'RabbitHole', 'Helvetica Neue', sans-serif;
 }
 
 svg {
@@ -41,5 +46,8 @@ svg {
 }
 
 .trailer > div {
-  background-image: linear-gradient(45deg, rgba(140, 0, 255, .8) 0%, rgba(2, 242, 114, .9) 100%)
+  background: hsla(127, 100%, 50%, 1);
+  background: -moz-linear-gradient(360deg, hsla(127, 100%, 50%, 1) 0%, hsla(226, 100%, 51%, 1) 100%);
+  background: -webkit-linear-gradient(360deg, hsla(127, 100%, 50%, 1) 0%, hsla(226, 100%, 51%, 1) 100%);
+  background: linear-gradient(360deg, hsla(127, 100%, 50%, 1) 0%, hsla(226, 100%, 51%, 1) 100%);
 }
