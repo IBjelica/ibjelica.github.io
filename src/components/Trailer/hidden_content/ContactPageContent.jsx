@@ -1,8 +1,10 @@
+import Word from "../../Word";
+
 const ContactPageContent = () => {
   return (
     <div className="row max-w-full h-full px-[1.1875rem] py-4">
         <h1 className="title uppercase text-[6rem] tracking-[0.2rem] leading-[7.15rem] text-justify mb-[6.25rem]">
-            WE EMBRACE THE <span className="wacky-word align-bottom">ART</span> OF THE <span className="wacky-word align-bottom">UNSEEN</span>
+            WE EMBRACE THE <Word str="art" /> OF THE <span className="wacky-word align-bottom">UNSEEN</span>
         </h1>
         <p className="text-[2.5rem] leading-[3rem] text-justify mb-12">
             We believe that the true <span className="wacky-word align-bottom">magic</span> of web <span className="wacky-word align-bottom">design</span> and <span className="wacky-word align-bottom">development</span> lies beneath the surface. While others may only

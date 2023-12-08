@@ -14,7 +14,7 @@
   src: local('RabbitHole'), local('RabbitHole'),
       /* url('/src/fonts/HelveticaNeueCyr-Light.woff2') format('woff2'),
       url('/src/fonts/HelveticaNeueCyr-Light.woff') format('woff'), */
-      url('/src/fonts/RabbitHole-DisplayTRIAL-VERSION-1.ttf') format('truetype');
+      url('/src/fonts/RabbitHole-Display.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -50,4 +50,23 @@ svg {
   background: -moz-linear-gradient(360deg, hsla(127, 100%, 50%, 1) 0%, hsla(226, 100%, 51%, 1) 100%);
   background: -webkit-linear-gradient(360deg, hsla(127, 100%, 50%, 1) 0%, hsla(226, 100%, 51%, 1) 100%);
   background: linear-gradient(360deg, hsla(127, 100%, 50%, 1) 0%, hsla(226, 100%, 51%, 1) 100%);
+}
+
+.trailer svg {
+  display: inline-block;
+}
+
+/* testing */
+.trailer {
+  opacity: 1 !important;
+  overflow: visible !important;
+}
+h1, p {
+  color: red !important;
+}
+.trailer h1, .trailer p {
+  color: white !important;
+}
+.trailer > div {
+  background: transparent !important;
 }

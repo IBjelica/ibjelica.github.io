@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <div className="group/screen px-[2.1875rem] py-8">
         <h1 className="title uppercase text-[6rem] tracking-[0.2rem] leading-[7.15rem] text-justify mb-[6.25rem]">
-            WE EMBRACE THE <span className="w-[209px] h-[95px] text-center">ARR</span> OF THE UNSEEN
+            WE EMBRACE THE <span className="w-[209px] h-[95px] text-center">ART</span> OF THE UNSEEN
         </h1>
         <p className="text-[2.5rem] leading-[3rem] text-justify mb-12">
             We believe that the true magic of web design and development lies beneath the surface. While others may only
