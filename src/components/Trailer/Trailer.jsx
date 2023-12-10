@@ -53,7 +53,7 @@ const Trailer = (props) => {
                 return <HiddenHomeContent />
 
             case "ContactPageContent":
-                return <HiddenContactContent handleFancyWidths={props.handleFancyWidths} />
+                return <HiddenContactContent handlefunkyWidths={props.handlefunkyWidths} />
         }
     }
 
