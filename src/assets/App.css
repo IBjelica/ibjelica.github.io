@@ -14,7 +14,7 @@
   src: local('RabbitHole'), local('RabbitHole'),
       /* url('/src/fonts/HelveticaNeueCyr-Light.woff2') format('woff2'),
       url('/src/fonts/HelveticaNeueCyr-Light.woff') format('woff'), */
-      url('/src/fonts/RabbitHole-Display.ttf') format('truetype');
+      url('/src/fonts/RabbitHole-Display.otf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -37,12 +37,25 @@ body {
   font-size: 16px;
 }
 
-body .wacky-word {
+body .fancy {
   font-family: 'RabbitHole', 'Helvetica Neue', sans-serif;
 }
 
-svg {
-  overflow: visible;
+.title {
+  line-height: 1.2em;
+  vertical-align: middle;
+}
+
+p {
+  line-height: 1.2em;
+  vertical-align: middle;
+}
+
+span {
+  display: inline-block;
+  line-height: 1.2em;
+  vertical-align: bottom;
+  text-align: center;
 }
 
 .trailer > div {
@@ -57,7 +70,7 @@ svg {
 }
 
 /* testing */
-.trailer {
+/* .trailer {
   opacity: 1 !important;
   overflow: visible !important;
 }
@@ -69,4 +82,4 @@ h1, p {
 }
 .trailer > div {
   background: transparent !important;
-}
+} */

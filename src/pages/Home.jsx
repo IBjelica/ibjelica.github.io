@@ -1,4 +1,5 @@
 import Letter from "../components/Letter";
+import Word from "../components/Word";
 import DotsLink from "../components/DotsLink";
 import Trailer from "../components/Trailer/Trailer";
 
@@ -7,66 +8,17 @@ const Home = () => {
     return (
         <div className="group/screen w-screen h-screen p-4 flex flex-col justify-between">
     {/* Todo: height for smaller screens */}
-            <div className="row max-w-full h-[min(25vh,_14vw)] flex justify-start align-baseline gap-7">
-            <Letter
-                char="n"
-            />
-            <Letter
-                char="o"
-            />
-            <Letter
-                char="t"
-            />
-            <Letter
-                char="h"
-            />
-            <Letter
-                char="i"
-            />
-            <Letter
-                char="n"
-            />
-            <Letter
-                char="g"
-            />
-            </div>
-
-            <div className="row max-w-full h-[min(25vh,_14vw)] flex justify-start align-baseline gap-7">
-            <Letter
-                char="t"
-            />
-            <Letter
-                char="o"
-            />
-
-            <Letter
-                char=" "//Todo: hidden link to portfolio
-            />
             
-            <Letter
-                char="s"
-            />
-            <Letter
-                char="e"
-            />
-            <Letter
-                char="e"
-            />
+            <div className="row max-w-full w-full flex justify-start align-baseline">
+                <Word str="Nothing" />
             </div>
 
-            <div className="row max-w-full h-[min(25vh,_14vw)] flex justify-start align-baseline gap-7">
-            <Letter
-                char="h"
-            />
-            <Letter
-                char="e"
-            />
-            <Letter
-                char="r"
-            />
-            <Letter
-                char="e"
-            />
+            <div className="row max-w-full w-3/4 flex justify-start align-baseline">
+                <Word str="to&nbsp;see" />
+            </div>
+
+            <div className="row max-w-full w-2/4 flex justify-start align-baseline">
+                <Word str="here" />
             </div>
             
             <DotsLink />

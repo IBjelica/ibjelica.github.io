@@ -33,10 +33,15 @@ const Trailer = (props) => {
         // }
     
         window.addEventListener('mousemove', handleMouseMove);
+        window.addEventListener('touchmove', handleMouseMove);
     
         return () => {
             window.removeEventListener(
                 'mousemove',
+                handleMouseMove
+            );
+            window.removeEventListener(
+                'touchmove',
                 handleMouseMove
             );
         };
@@ -48,7 +53,7 @@ const Trailer = (props) => {
                 return <HiddenHomeContent />
 
             case "ContactPageContent":
-                return <HiddenContactContent />
+                return <HiddenContactContent handleFancyWidths={props.handleFancyWidths} />
         }
     }
 
