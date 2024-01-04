@@ -1,29 +1,37 @@
+import { useState, useEffect, useRef } from "react";
 import Letter from "../components/Letter";
-import Word from "../components/Word";
+import SplitWord from "../components/SplitWord";
 import DotsLink from "../components/DotsLink";
 import Trailer from "../components/Trailer/Trailer";
 
 const Home = () => {
+    const contentRef = useRef(null)
+    const [height, setHeight] = useState(0)
+    
+    useEffect(() => {
+        setHeight(contentRef.current.clientHeight)
+    }, [height])
 
     return (
-        <div className="group/screen w-screen h-screen p-4 flex flex-col justify-between">
+        <div ref={contentRef} className="group/screen w-screen h-[100dvh] p-4 flex flex-col justify-between">
     {/* Todo: height for smaller screens */}
             
             <div className="row max-w-full w-full flex justify-start align-baseline">
-                <Word str="Nothing" />
+                <SplitWord str="Nothing" />
             </div>
 
             <div className="row max-w-full w-3/4 flex justify-start align-baseline">
-                <Word str="to&nbsp;see" />
+                <SplitWord str="to&nbsp;see" />
             </div>
 
             <div className="row max-w-full w-2/4 flex justify-start align-baseline">
-                <Word str="here" />
+                <SplitWord str="here" />
             </div>
             
-            <DotsLink />
+            <DotsLink link="/contact" />
 
             <Trailer
+                height={height}
                 content="HomePageContent"
             />
         </div>

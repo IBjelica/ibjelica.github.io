@@ -1,51 +1,94 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { lazy } from 'react';
 
 const HiddenHomeContent = lazy(() => import(`./hidden_content/HomePageContent.jsx`))
 const HiddenContactContent = lazy(() => import(`./hidden_content/ContactPageContent.jsx`))
 
 const Trailer = (props) => {
-    const mouseRef = useRef()
-    const hiddenTextRef = useRef()
+    const { height, words, setWords } = props
+    const [ scrollYPos, setScrollYPos ] = useState(0)
+    const [ clientX, setClientX ] = useState(0)
+    const [ clientY, setClientY ] = useState(0)
+    const mouseRef = useRef(null)
+    const hiddenTextRef = useRef(null)
+    const animationFrameId = useRef(null)
     let init = false
 
+    const handleScroll = () => {
+        if (!animationFrameId.current) {
+            animationFrameId.current = requestAnimationFrame(() => {
+                setScrollYPos(document.body.scrollTop || window.scrollY || document.documentElement.scrollT || 0)
+                document.body.querySelector(".trailer > div").scrollTop = scrollYPos
+
+                animationFrameId.current = null
+            });
+        }
+    };
+    
+    const handleMouseMove = (event) => {
+        if (!animationFrameId.current) {
+            animationFrameId.current = requestAnimationFrame(() => {
+                const { clientX, clientY } = event.touches ? event.touches[0] : event;
+                const posX = clientX - (mouseRef.current ? mouseRef.current.clientWidth / 2 : 0)
+                const posY = clientY + scrollYPos - (mouseRef.current ? mouseRef.current.clientHeight / 2 : 0)
+
+                setClientX(clientX);
+                setClientY(clientY);
+    
+                if (mouseRef.current && hiddenTextRef.current) {
+                    mouseRef.current.animate([{
+                        top: `${posY}px`,
+                        left: `${posX}px`,
+                    }], {
+                        duration: 700,
+                        fill: 'forwards',
+                    })
+            
+                    hiddenTextRef.current.animate([{
+                        top: `${0 - posY}px`,
+                        left: `${0 - posX}px`,
+                    }], {
+                        duration: 700,
+                        fill: 'forwards',
+                    })
+                }
+    
+                if (!init) {
+                    mouseRef.current.style = `top: ${posY}px; left: ${posX}px;`;
+                    hiddenTextRef.current.style = `height: ${height}px; top: ${0 - posY}px; left: ${0 - posX}px;`;
+                    mouseRef.current.className += ` group-hover/screen:w-40 group-hover/screen:opacity-100`;
+                    init = true;
+                }
+    
+                animationFrameId.current = null;
+            });
+        }
+    };
+
     useEffect(() => {
-        const handleMouseMove = (e) => {
-            let posY = e.clientY - mouseRef.current.offsetHeight / 2
-            let posX = e.clientX - mouseRef.current.offsetWidth / 2
-
-            hiddenTextRef.current.style.top = (0 - posY) + "px"
-            hiddenTextRef.current.style.left = (0 - posX) + "px"
-
-            mouseRef.current.style.top = posY + "px"
-            mouseRef.current.style.left = posX + "px"
-
-            if (!init) {
-                mouseRef.current.className += " group-hover/screen:w-36 group-hover/screen:opacity-100"
-                init = true
-            }
-        };
-
         //Todo: Pulse on click?
         //Todo: Click text appear on hover link
         // const handleMouseClick = (e) => {
             
         // }
+        
+        if (hiddenTextRef.current) {
+            hiddenTextRef.current.style.height = `${height}px`;
+        }
     
-        window.addEventListener('mousemove', handleMouseMove);
-        window.addEventListener('touchmove', handleMouseMove);
+        document.addEventListener('mousemove', handleMouseMove);
+        document.addEventListener('touchmove', handleMouseMove);
+        document.body.addEventListener('scroll', handleScroll);
     
         return () => {
-            window.removeEventListener(
-                'mousemove',
-                handleMouseMove
-            );
-            window.removeEventListener(
-                'touchmove',
-                handleMouseMove
-            );
+            document.removeEventListener("mousemove", handleMouseMove);
+            document.removeEventListener("touchmove", handleMouseMove);
+            document.body.removeEventListener("scroll", handleScroll);
+            if (animationFrameId.current) {
+                cancelAnimationFrame(animationFrameId.current);
+            }
         };
-    }, []);
+    }, [scrollYPos, height]);
 
     const renderHiddenContent = () => {
         switch (props.content) {
@@ -53,7 +96,7 @@ const Trailer = (props) => {
                 return <HiddenHomeContent />
 
             case "ContactPageContent":
-                return <HiddenContactContent handlefunkyWidths={props.handlefunkyWidths} />
+                return <HiddenContactContent words={words} setWords={setWords} />
         }
     }
 

@@ -1,20 +1,37 @@
-import words from "../data/words.jsx"
-import Letter from "../components/Letter";
-import parse from "html-react-parser"
+import { useRef, useEffect } from "react";
 
 const Word = (props) => {
-    const { str, funky } = props;
-    const chars = str.split('');
+    const { words, setWords, funky, text } = props;
+    const wordRef = useRef();
+
+    useEffect(() => {
+        if (funky === "funky") {
+            document.fonts.ready.then(() => {
+                const currentWord = wordRef.current;
+                const width = currentWord.offsetWidth;
+
+                setWords(prevWords => [
+                    ...prevWords,
+                    { text, width },
+                ]);
+            });
+        }
+    }, []);
+    
+    useEffect(() => {
+        if (funky !== "funky") {
+            const currentWord = wordRef.current;
+            const word = words.find(word => word.text === text);
+
+            if (word) {
+                currentWord.style.width = `${word.width}px`;
+            }
+        }
+    }, [words]);
 
     return (
-        <span className={`landing-text ${funky ? 'funky' : ''} flex h-full w-full uppercase`}>
-            { chars.map((char, index) => {
-                return(
-                    <Letter key={index} char={char} />
-                )
-            })}
-        </span>
-    )
+        <span ref={wordRef} className={funky}>{text}</span>
+    );
 };
 
 export default Word;
