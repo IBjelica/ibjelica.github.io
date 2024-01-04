@@ -11,11 +11,25 @@ const Contact = () => {
     ])
 
     useEffect(() => {
-        setHeight(contentRef.current.clientHeight)
-    }, [height])
+        const resizeObserver = new ResizeObserver(entries => {
+            for (let entry of entries) {
+                setHeight(entry.target.clientHeight);
+            }
+        });
+    
+        if (contentRef.current) {
+            resizeObserver.observe(contentRef.current);
+        }
+    
+        return () => {
+            if (contentRef.current) {
+                resizeObserver.unobserve(contentRef.current);
+            }
+        };
+    }, []);
 
   return (
-    <div ref={contentRef} className="group/screen relative px-[2.1875rem] py-8">
+    <div ref={contentRef} className="group/screen relative min-h-screen px-[2.1875rem] py-8">
         <h1 className="title uppercase text-[6rem] tracking-[0.2rem] text-justify mb-[6.25rem]">
             WE EMBRACE THE <Word words={words} setWords={setWords} funky="not__funky" text="ART" /> OF THE <Word words={words} setWords={setWords} funky="not__funky" text="UNSEEN" />
         </h1>

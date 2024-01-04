@@ -9,8 +9,22 @@ const Home = () => {
     const [height, setHeight] = useState(0)
     
     useEffect(() => {
-        setHeight(contentRef.current.clientHeight)
-    }, [height])
+        const resizeObserver = new ResizeObserver(entries => {
+            for (let entry of entries) {
+                setHeight(entry.target.clientHeight);
+            }
+        });
+    
+        if (contentRef.current) {
+            resizeObserver.observe(contentRef.current);
+        }
+    
+        return () => {
+            if (contentRef.current) {
+                resizeObserver.unobserve(contentRef.current);
+            }
+        };
+    }, []);
 
     return (
         <div ref={contentRef} className="group/screen w-screen h-[100dvh] p-4 flex flex-col justify-between">
