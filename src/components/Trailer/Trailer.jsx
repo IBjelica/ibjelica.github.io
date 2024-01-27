@@ -1,11 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
-import { lazy } from 'react';
-
-const HiddenHomeContent = lazy(() => import(`./hidden_content/HomePageContent.jsx`))
-const HiddenContactContent = lazy(() => import(`./hidden_content/ContactPageContent.jsx`))
 
 const Trailer = (props) => {
-    const { height, words, setWords } = props
+    const { height, hiddenContent, words, setWords } = props
     const [ scrollYPos, setScrollYPos ] = useState(0)
     const [ clientX, setClientX ] = useState(0)
     const [ clientY, setClientY ] = useState(0)
@@ -67,10 +63,10 @@ const Trailer = (props) => {
 
     useEffect(() => {
         //Todo: Pulse on click?
-        //Todo: Click text appear on hover link
-        // const handleMouseClick = (e) => {
+        //Todo: "Click" text appear on hover link
+        const handleMouseClick = (e) => {
             
-        // }
+        }
         
         if (hiddenTextRef.current) {
             hiddenTextRef.current.style.height = `${height}px`;
@@ -90,16 +86,6 @@ const Trailer = (props) => {
         };
     }, [scrollYPos, height]);
 
-    const renderHiddenContent = () => {
-        switch (props.content) {
-            case "HomePageContent":
-                return <HiddenHomeContent />
-
-            case "ContactPageContent":
-                return <HiddenContactContent words={words} setWords={setWords} />
-        }
-    }
-
     return (
         <div
             ref={mouseRef}
@@ -107,7 +93,7 @@ const Trailer = (props) => {
         >
             <div ref={hiddenTextRef} className="group/screen w-screen h-screen p-4 flex flex-col justify-between fixed top-0 left-0 bg-black">
                 {
-                    renderHiddenContent()
+                    hiddenContent
                 }
             </div>
         </div>
