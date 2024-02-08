@@ -6,7 +6,7 @@ import './assets/index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/ntsh">
       <App />
     </BrowserRouter>
   </React.StrictMode>,
