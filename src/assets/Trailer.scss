@@ -1,0 +1,61 @@
+.content {
+    &:hover {
+        .trailer {
+            width: 20px;
+            opacity: 1;
+        }
+    }
+
+    &:has(a:hover) {
+        .trailer {
+            width: 50px;
+            opacity: 1;
+        }
+    }
+
+    &:has(.letter:hover) {
+        .trailer {
+            width: 50px;
+            opacity: 1;
+        }
+    }
+}
+
+.trailer {
+    --_o: .7;
+    --_to-h: 226;
+    --_to-s: 100%;
+    --_to-l: 50%;
+    --_from-h: 127;
+    --_from-s: 100%;
+    --_from-l: 50%;
+
+    --_to-gradient-clr-hsl: var( --_to-h ), var( --_to-s ), var( --_to-l );
+    --_from-gradient-clr-hsl: var( --_from-h ), var( --_from-s ), var( --_from-l );
+
+    position: absolute;
+    width: 0;
+    aspect-ratio: 1;
+
+    border-radius: 100%;
+
+    opacity: 0;
+
+    transition: all 500ms cubic-bezier(0.45, 0.02, 0.09, 0.98);
+
+    z-index: 30;
+
+    // drop-shadow-[0_0_15px_rgba(0,0,0,1)] transition-opacity duration-500 ease-[]
+    background: hsla(var( --_from-gradient-clr-hsl ), var( --_o ));
+    background: -moz-linear-gradient(360deg, hsla(var( --_from-gradient-clr-hsl ), var( --_o )) 0%, hsla(var( --_to-gradient-clr-hsl ), var( --_o )) 100%);
+    background: -webkit-linear-gradient(360deg, hsla(var( --_from-gradient-clr-hsl ), var( --_o )) 0%, hsla(var( --_to-gradient-clr-hsl ), var( --_o )) 100%);
+    background: linear-gradient(360deg, hsla(var( --_from-gradient-clr-hsl ), var( --_o )) 0%, hsla(var( --_to-gradient-clr-hsl ), var( --_o )) 100%);
+    
+    mix-blend-mode: difference;
+
+    pointer-events: none;
+
+    svg {
+      display: inline-block;
+    }
+}

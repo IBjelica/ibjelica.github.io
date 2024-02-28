@@ -1,0 +1,31 @@
+$primary-clr: #000000;
+$secondary-clr: #495199;
+$text-clr: #FFFFFF;
+
+#root {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+::selection {
+  background: $secondary-clr;
+}
+
+.dots {
+  svg {
+    transition: transform 500ms ease;
+
+    &:hover {
+      transform: scale(1.4);
+    }
+  }
+}

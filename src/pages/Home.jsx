@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import Letter from "../components/Letter";
 import SplitWord from "../components/SplitWord";
 import DotsLink from "../components/DotsLink";
-import Trailer from "../components/Trailer/Trailer";
+import Trailer from "../components/Trailer";
 
 const Home = () => {
     const contentRef = useRef(null)
@@ -27,8 +26,7 @@ const Home = () => {
     }, []);
 
     return (
-        <div ref={contentRef} className="group/screen w-screen h-[100dvh] p-4 flex flex-col justify-between">
-    {/* Todo: height for smaller screens */}
+        <div ref={contentRef} className="content group/screen w-screen h-[100dvh] p-4 flex flex-col justify-between">
             
             <div className="row max-w-full w-full flex justify-start align-baseline">
                 <SplitWord str="Nothing" />
@@ -39,30 +37,11 @@ const Home = () => {
             </div>
 
             <div className="row max-w-full w-2/4 flex justify-start align-baseline">
-                <SplitWord str="here" />
+                <SplitWord str="here" glitch={true} />
             </div>
             
             <DotsLink link="/contact" />
-
-            <Trailer
-                height={height}
-                content="HomePageContent"
-                hiddenContent={
-                    <>
-                        <h1 className="row max-w-full w-full flex justify-start align-baseline">
-                            <SplitWord funky={true} str="Nothing" />
-                        </h1>
-
-                        <h1 className="row max-w-full w-3/4 flex justify-start align-baseline">
-                            <SplitWord funky={true} str="to&nbsp;see" />
-                        </h1>
-
-                        <h1 className="row max-w-full w-2/4 flex justify-start align-baseline">
-                            <SplitWord funky={true} str="here" />
-                        </h1>
-                    </>
-                }
-            />
+            <Trailer />
         </div>
     )
 }
