@@ -1,21 +1,21 @@
 .content {
-    &:hover {
-        .trailer {
-            width: 20px;
-            opacity: 1;
-        }
-    }
+    // &:hover {
+    //     .trailer {
+    //         width: 20px;
+    //         opacity: 1;
+    //     }
+    // }
 
     &:has(a:hover) {
         .trailer {
-            width: 50px;
+            width: 30px;
             opacity: 1;
         }
     }
 
     &:has(.letter:hover) {
         .trailer {
-            width: 50px;
+            width: 90px;
             opacity: 1;
         }
     }

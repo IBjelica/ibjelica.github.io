@@ -59,7 +59,7 @@ const Trailer = (props) => {
     });
 
     return (
-        <div ref={mouseRef} className="trailer" ></div>
+        <div ref={mouseRef} className="trailer"></div>
     )
 }
 
