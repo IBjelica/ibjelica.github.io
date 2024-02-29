@@ -31,25 +31,27 @@ const Home = () => {
     }, []);
 
     return (
-        <div ref={contentRef} className="content group/screen w-screen h-[100dvh] flex flex-col justify-between">
-            
-            <div className="row max-w-full w-full flex justify-start align-baseline">
-                <SplitWord str="Nothing" />
-            </div>
+        <>
+            <div ref={contentRef} className="content group/screen w-screen h-[100dvh] flex flex-col justify-between">
+                
+                <div className="row max-w-full w-full flex justify-start align-baseline">
+                    <SplitWord str="Nothing" />
+                </div>
 
-            <div className="row max-w-full w-3/4 flex justify-start align-baseline">
-                <SplitWord str="to see" />
-            </div>
+                <div className="row max-w-full w-3/4 flex justify-start align-baseline">
+                    <SplitWord str="to see" />
+                </div>
 
-            <div className="row max-w-full w-2/4 flex justify-start align-baseline">
-                <SplitWord str="here" glitch={true} />
-            </div>
-            
-            {/* <DotsLink contactIn={contactIn} /> */}
-            <Trailer />
+                <div className="row max-w-full w-2/4 flex justify-start align-baseline">
+                    <SplitWord str="here" glitch={true} />
+                </div>
+                
+                {/* <DotsLink contactIn={contactIn} /> */}
+                <Trailer />
 
+            </div>
             <Contact className="contact-section" />
-        </div>
+        </>
     )
 }
 
