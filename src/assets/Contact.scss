@@ -1,0 +1,27 @@
+@import './Variables';
+
+.contact-section {
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    padding: $page-padding;
+    
+    .spacer {    
+        width: 100%;
+        padding-top: 105lvh;
+
+        pointer-events: none;
+    }
+
+    .contact {
+        width: 100vw;
+        left: 0;
+        padding: $page-padding;
+
+
+        box-shadow: 0px -10px 20px 10px $text-clr;
+
+        background-color: $primary-clr;
+    }
+}

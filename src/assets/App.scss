@@ -1,6 +1,4 @@
-$primary-clr: #000000;
-$secondary-clr: #495199;
-$text-clr: #FFFFFF;
+@import './Variables';
 
 #root {
   margin: 0;
@@ -12,8 +10,16 @@ html {
 }
 
 body {
-  height: 100vh;
+  height: 100dvh;
   width: 100vw;
+
+  .content {
+    padding: $page-padding;
+
+    .row {
+      height: 33.33%;
+    }
+  }
 }
 
 ::selection {

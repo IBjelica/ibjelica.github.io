@@ -1,11 +1,4 @@
 .content {
-    // &:hover {
-    //     .trailer {
-    //         width: 20px;
-    //         opacity: 1;
-    //     }
-    // }
-
     &:has(a:hover) {
         .trailer {
             width: 30px;
