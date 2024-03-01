@@ -46,12 +46,12 @@ const Trailer = (props) => {
             
         }
     
-        document.addEventListener('mousemove', handleMouseMove);
-        document.addEventListener('touchmove', handleMouseMove);
+        window.addEventListener('mousemove', handleMouseMove);
+        window.addEventListener('touchmove', handleMouseMove);
     
         return () => {
-            document.removeEventListener("mousemove", handleMouseMove);
-            document.removeEventListener("touchmove", handleMouseMove);
+            window.removeEventListener("mousemove", handleMouseMove);
+            window.removeEventListener("touchmove", handleMouseMove);
             if (animationFrameId.current) {
                 cancelAnimationFrame(animationFrameId.current);
             }
