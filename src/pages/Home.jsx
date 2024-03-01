@@ -34,15 +34,15 @@ const Home = () => {
         <>
             <div ref={contentRef} className="content group/screen w-screen h-[100dvh] flex flex-col justify-between">
                 
-                <div className="row max-w-full w-full flex justify-start align-baseline">
+                <div className="row max-w-full w-full max-h-[32%] grid grid-flow-col auto-cols-min">
                     <SplitWord str="Nothing" />
                 </div>
 
-                <div className="row max-w-full w-3/4 flex justify-start align-baseline">
+                <div className="row max-w-full w-3/4 max-h-[32%] grid grid-flow-col auto-cols-min">
                     <SplitWord str="to see" />
                 </div>
 
-                <div className="row max-w-full w-2/4 flex justify-start align-baseline">
+                <div className="row max-w-full w-2/4 max-h-[32%] grid grid-flow-col auto-cols-min">
                     <SplitWord str="here" glitch={true} />
                 </div>
                 
