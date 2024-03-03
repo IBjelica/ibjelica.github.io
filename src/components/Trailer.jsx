@@ -17,7 +17,8 @@ const Trailer = (props) => {
 
                 setClientX(clientX);
                 setClientY(clientY);
-    
+    console.log('x: ' + posX)
+    console.log('y: ' + posY)
                 if (mouseRef.current) {
                     mouseRef.current.animate([{
                         top: `${posY}px`,
