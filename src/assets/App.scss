@@ -12,24 +12,8 @@ html {
 body {
   height: 100dvh;
   width: 100vw;
-
-  .content {
-    position: sticky;
-    top: 0;
-    padding: $page-padding;
-  }
 }
 
 ::selection {
   background: $secondary-clr;
-}
-
-.dots {
-  svg {
-    transition: transform 500ms ease;
-
-    &:hover {
-      transform: scale(1.4);
-    }
-  }
 }

@@ -1,5 +1,16 @@
 //Todo: direction aware hover effect
-
+/**
+ * 
+ * .dots {
+ *    svg {
+ *      transition: transform 500ms ease;
+ 
+ *      &:hover {
+ *        transform: scale(1.4);
+ *      }
+ *    }
+ *  }
+ */
 const DotsLink = (props) => {
     const { contactIn } = props;
 
