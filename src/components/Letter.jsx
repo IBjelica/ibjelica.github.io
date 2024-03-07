@@ -10,7 +10,7 @@ const Letter = (props) => {
     : "text-[min(31vh,_14vw)] min-w-[100px]"
 
     return (
-        <div className="letter-wrapper hover:font-['RabbitHole'] h-full flex justify-center items-center flex-grow cursor-pointer">
+        <div className="letter-wrapper hover:font-['RabbitHole'] overflow-hidden h-full flex justify-center items-center flex-grow cursor-pointer">
             <span onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} className={classes}>
                 { char }
             </span>

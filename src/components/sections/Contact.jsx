@@ -1,7 +1,8 @@
 import Word from "../../components/Word";
+import Socials from "../../components/Socials";
 import '../../assets/Contact.scss';
 
-const Contact = (props) => {
+const Contact = () => {
 
   return (
     <div className="contact-section">
@@ -18,10 +19,8 @@ const Contact = (props) => {
             our customers&#39; unique" needs. For us, design" transcends mere aesthetics; it&#39;s a profound connection
             rooted in empathy", compassion", and an authentic concern for the individual we work with.
         </p>
-        <p className="links text-[2.5rem] text-justify">
-          linkovi 
-          {/* TODO: staviti linkove za kontakt */}
-        </p>
+        <Socials />
+        {/* TODO: staviti linkove za kontakt */}
     </div>
   );
 }
