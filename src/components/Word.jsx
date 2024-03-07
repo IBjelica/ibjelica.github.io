@@ -1,36 +1,13 @@
-import { useRef, useEffect } from "react";
+import { useContext } from "react";
+import { HoveredContext } from "./contexts/HoveredContext";
 
 const Word = (props) => {
-    const { words, setWords, funky, text } = props;
-    const wordRef = useRef();
+    const { hovered, setHovered } = useContext(HoveredContext)
 
-    useEffect(() => {
-        if (funky === "funky") {
-            document.fonts.ready.then(() => {
-                const currentWord = wordRef.current;
-                const width = currentWord.offsetWidth;
-
-                setWords(prevWords => [
-                    ...prevWords,
-                    { text, width },
-                ]);
-            });
-        }
-    }, []);
-    
-    useEffect(() => {
-        if (funky !== "funky") {
-            const currentWord = wordRef.current;
-            const word = words.find(word => word.text === text);
-
-            if (word) {
-                currentWord.style.width = `${word.width}px`;
-            }
-        }
-    }, [words]);
+    const { text } = props
 
     return (
-        <span ref={wordRef} className={funky}>{text}</span>
+        <span onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} >{text}</span>
     );
 };
 
