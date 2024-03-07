@@ -7,7 +7,13 @@ const Word = (props) => {
     const { text } = props
 
     return (
-        <span onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} >{text}</span>
+        <span
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+            className="font-['RabbitHole']"
+        >
+            {text}
+        </span>
     );
 };
 

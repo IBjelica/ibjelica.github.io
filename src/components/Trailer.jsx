@@ -5,13 +5,13 @@ import '../assets/Trailer.scss';
 
 export default function Trailer() {
     const { hovered, setHovered } = useContext(HoveredContext)
-    const trailerSize = hovered ? 130 : 8
+    const trailerSize = 130
     const mouse = {
         x: useMotionValue(0),
         y: useMotionValue(0)
     }
 
-    const smoothOptions = { damping: 20, stiffness: 300, mass: 0.5 }
+    const smoothOptions = { damping: 20, stiffness: 200, mass: 0.2 }
     const smoothMouse = {
         x: useSpring(mouse.x, smoothOptions),
         y: useSpring(mouse.y, smoothOptions)
@@ -37,9 +37,7 @@ export default function Trailer() {
             style={{
                 left: smoothMouse.x,
                 top: smoothMouse.y,
-                width: trailerSize
             }}
-
         ></motion.div>
     )
 }

@@ -1,40 +1,11 @@
 @import './Variables';
 
-// body:has(:hover, :focus-within) {
-//     .trailer {
-//         width: .5rem;
-//         opacity: 1;
-//     }
-    
-//     &:has(a:hover, a:focus) {
-//         .trailer {
-//             width: 3rem;
-//         }
-//     }
-
-//     &:has(.letter:hover, .letter:focus, .word:hover, .word:focus) {
-//         .trailer {
-//             width: 130px;
-//         }
-//     }
-// }
-
 .trailer {
     position: fixed;
-    width: 8px;
+    width: 130px;
     aspect-ratio: 1;
 
-    // top: 0;
-
     border-radius: 100%;
-
-    // opacity: 0;
-
-    transition:
-        width 500ms cubic-bezier(0.45, 0.02, 0.09, 0.98),
-        opacity 500ms cubic-bezier(0.45, 0.02, 0.09, 0.98);
-
-    z-index: 99999;
 
     // drop-shadow-[0_0_15px_rgba(0,0,0,1)] transition-opacity duration-500 ease-[]
     background: hsla($from-h, $from-s, $from-l, $o);
@@ -43,8 +14,10 @@
     background: linear-gradient(360deg, hsla($from-h, $from-s, $from-l, $o) 0%, hsla($to-h, $to-s, $to-l, $o) 100%);
     
     mix-blend-mode: difference;
-
+    
     pointer-events: none;
+    
+    z-index: 99999;
 
     svg {
       display: inline-block;
