@@ -1,8 +1,10 @@
+import { forwardRef } from "react";
 import Word from "../../components/Word";
 import Socials from "../../components/Socials";
+import Magnetic from '../magnetic'
 import '../../assets/Contact.scss';
 
-const Contact = () => {
+const Contact = (props, ref) => {
 
   return (
     <div className="contact-section">
@@ -19,10 +21,21 @@ const Contact = () => {
             our customers&#39; unique" needs. For us, design" transcends mere aesthetics; it&#39;s a profound connection
             rooted in empathy", compassion", and an authentic concern for the individual we work with.
         </p>
-        <Socials />
+
+        <div className='socials'>
+            <div className="socials__links text-[5rem] tracking-[0.2rem] text-justify">
+                <a href="">Email</a>
+                  <Magnetic className="relative">
+                    <div ref={ref} className="bounds"></div>
+                    <a href="#">LinkedIn</a>
+                  </Magnetic>
+                <a href="">Insta</a>
+            </div>
+        </div>
+        {/* <Socials /> */}
         {/* TODO: staviti linkove za kontakt */}
     </div>
   );
 }
 
-export default Contact;
+export default forwardRef(Contact);

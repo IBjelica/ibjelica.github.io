@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Hero from "../components/sections/Hero";
 import Contact from "../components/sections/Contact";
 import Trailer from "../components/Trailer";
@@ -6,13 +6,15 @@ import HoveredContextProvider from "../components/contexts/HoveredContext";
 
 const Home = () => {
 
+    const stickyElement = useRef(null)
+
     return (
         <HoveredContextProvider>
             <Hero />
 
-            <Contact />
+            <Contact ref={stickyElement} />
             
-            <Trailer />
+            <Trailer stickyElement={stickyElement} />
         </HoveredContextProvider>
     )
 }
