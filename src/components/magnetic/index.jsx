@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { motion, spring } from "framer-motion";
 
-const Framer = ({children}) => {
+const Framer = ({children, className}) => {
     const ref = useRef(null)
     const [position, setPosition] = useState({x:0, y:0})
 
@@ -21,12 +21,13 @@ const Framer = ({children}) => {
 
     return (
         <motion.div
+            className={className}
             style={{position: 'relative'}}
             ref={ref}
             onMouseMove={handleMouse}
             onMouseLeave={reset}
             animate={{x, y}}
-            transition={{type: "spring", stiffness: 350, damping: 5, mass: 0.5}}
+            transition={{type: "spring", stiffness: 1850, damping: 30, mass: 1.8}}
         >
             {children}
         </motion.div>

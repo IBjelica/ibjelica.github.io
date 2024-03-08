@@ -1,12 +1,42 @@
-.socials {
-    &__title {
-        
-    }
+@import "../assets/Variables";
 
-    &__links {
+.socials {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: left;
+    align-content: space-evenly;
+    width: 100%;
+    height: 100lvh;
+    padding: $page-padding;
+
+    &__link {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
+
+        &__content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            height: 40%;
+
+            .bounds {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+            
+                &:hover {
+                    width: 150%;
+                    height: 250%;
+                    left: -25%;
+                    top: -75%;
+                
+                }
+            }
+        }
     }
 }
