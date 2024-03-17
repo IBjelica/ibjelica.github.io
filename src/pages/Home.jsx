@@ -7,17 +7,17 @@ import HoveredContextProvider from "../components/contexts/HoveredContext";
 
 const Home = () => {
 
-    const stickyElement = useRef(null)
+    const stickyElements = useRef([])
 
     return (
         <HoveredContextProvider>
-            {/* <Hero /> */}
+            <Hero />
 
-            {/* <Contact /> */}
+            <Contact />
 
-            <Socials ref={stickyElement} />
+            <Socials ref={stickyElements} />
             
-            <Trailer stickyElement={stickyElement} />
+            {/* <Trailer stickyElements={stickyElements} /> */}
         </HoveredContextProvider>
     )
 }

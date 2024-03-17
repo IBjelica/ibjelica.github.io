@@ -1,10 +1,9 @@
 @import './Variables';
 
 .contact-section {
-    position: relative;
-    width: 100vw;
-    top: 25px;
-    left: 0;
+    position: sticky;
+    width: 80vw;
+    top: 0;
 
     padding: $page-padding;
 

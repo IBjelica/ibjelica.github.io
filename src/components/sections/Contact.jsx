@@ -1,11 +1,16 @@
+import { useRef, useEffect, useState } from "react";
+import { motion, useAnimation, useMotionValue, useScroll, useTransform } from "framer-motion";
 import Word from "../../components/Word";
 import '../../assets/Contact.scss';
 
-const Contact = (props, ref) => {
+const Contact = (props) => {
 
   return (
-    <div className="contact-section">
-        <h1 className="title uppercase text-[6rem] tracking-[0.2rem] text-justify mb-[6.25rem]">
+    <div
+      className="contact-section"
+      >
+        <h1
+          className="title uppercase text-[6rem] tracking-[0.2rem] text-justify mb-[6.25rem]">
             WE <Word text="EMBRACE" /> THE <Word text="ART" /> OF THE <Word text="UNSEEN" />
         </h1>
         <p className="text-[2.5rem] text-justify mb-12">

@@ -4,10 +4,10 @@ import { HoveredContext } from './contexts/HoveredContext';
 import '../assets/Trailer.scss';
 
 const Trailer = (props) => {
-    const { stickyElement } = props
+    const stickyElements = props.stickyElements
     const [ isHovered, setIsHovered ] = useState(false)
     const trailerRef = useRef()
-    const trailerSize = isHovered ? 150 : 130
+    const trailerSize = 130
     const mouse = {
         x: useMotionValue(0),
         y: useMotionValue(0)
@@ -31,12 +31,13 @@ const Trailer = (props) => {
 
     const handleMouseMove = (e) => {
         const { clientX, clientY } = e
-        const { left, top, width, height } = stickyElement.current.getBoundingClientRect()
-
-        const center = { x: left + width / 2, y: top + height / 2 }
-        const distance = { x: clientX - center.x , y: clientY - center.y }
-
+        
         if (isHovered) {
+            const { left, top, width, height } = e.target.getBoundingClientRect()
+    
+            const center = { x: left + width / 2, y: top + height / 2 }
+            const distance = { x: clientX - center.x , y: clientY - center.y }
+            
             rotate(distance)
             const absDistance = Math.max(Math.abs(distance.x), Math.abs(distance.y))
             const newScaleX = transform(absDistance, [0, width / 2], [1, 1.4])
@@ -46,6 +47,7 @@ const Trailer = (props) => {
             scale.y.set(newScaleY)
             mouse.x.set((center.x - trailerSize / 2) + distance.x * 0.1)
             mouse.y.set((center.y - trailerSize / 2) + distance.y * 0.1)
+
         } else {
             mouse.x.set(clientX - trailerSize / 2)
             mouse.y.set(clientY - trailerSize / 2)
@@ -62,13 +64,18 @@ const Trailer = (props) => {
     }
 
     useEffect( () => {
+        stickyElements.current.map((element) => {
+            element.addEventListener('mouseover', handleMouseOver)
+            element.addEventListener('mouseleave', handleMouseLeave)
+        })
+
         window.addEventListener('mousemove', handleMouseMove)
-        stickyElement.current.addEventListener('mouseover', handleMouseOver)
-        stickyElement.current.addEventListener('mouseleave', handleMouseLeave)
         return () => {
             window.removeEventListener('mousemove', handleMouseMove)
-            stickyElement.current.removeEventListener('mouseover', handleMouseOver)
-            stickyElement.current.removeEventListener('mouseleave', handleMouseLeave)
+            stickyElements.current.map((element, i) => {
+                element.removeEventListener('mouseover', handleMouseOver)
+                element.removeEventListener('mouseleave', handleMouseLeave)
+            })
         }
     } )
 

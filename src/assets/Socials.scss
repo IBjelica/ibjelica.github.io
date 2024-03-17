@@ -2,12 +2,15 @@
 
 .socials {
     display: grid;
+    position: relative;
     grid-template-rows: repeat(3, 1fr);
     justify-items: left;
     align-content: space-evenly;
     width: 100%;
     height: 100lvh;
     padding: $page-padding;
+
+    background-color: $primary-clr;
 
     &__link {
         display: flex;
