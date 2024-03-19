@@ -1,4 +1,5 @@
 import Letter from "../../components/Letter";
+import '../../assets/Hero.scss';
 
 const Hero = () => {
 
@@ -12,7 +13,7 @@ const Hero = () => {
     
     return (
         <div
-            className="hero-section w-screen h-[100dvh] flex flex-col justify-between sticky top-0 p-[$page-padding]"
+            className="hero-section w-screen flex flex-col justify-between p-[$page-padding]"
         >
             <div className="row max-w-[90%] w-[90%] max-h-[32%] grid grid-flow-col grid-cols-7">
                 { splitWord("Nothing") }

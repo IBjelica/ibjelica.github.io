@@ -1,16 +1,37 @@
 import { useRef, useEffect, useState } from "react";
-import { motion, useAnimation, useMotionValue, useScroll, useTransform } from "framer-motion";
+import { useTransform, motion } from "framer-motion";
 import Word from "../../components/Word";
 import '../../assets/Contact.scss';
 
 const Contact = (props) => {
+  const ref = useRef(null)
+  const [ scrollY, setScrollY ] = useState(0)
+  const [ width, setWidth ] = useState(70)
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(Math.round(window.scrollY));
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => { window.removeEventListener('scroll', handleScroll) }
+  }, [])
+
+  useEffect(() => {
+    const { top } = ref.current.getBoundingClientRect()
+    
+    const widthPercentage = (scrollY / Math.round(top)) * 30 + 70;
+    setWidth( Math.min(Math.max(widthPercentage, 70), 100) )
+  }, [scrollY])
 
   return (
-    <div
+    <motion.div
+    ref={ref}
       className="contact-section"
-      >
-        <h1
-          className="title uppercase text-[6rem] tracking-[0.2rem] text-justify mb-[6.25rem]">
+      style={{ width: `${width}%` }}
+    >
+        <h1 className="title uppercase text-[6rem] tracking-[0.2rem] text-justify mb-[6.25rem]">
             WE <Word text="EMBRACE" /> THE <Word text="ART" /> OF THE <Word text="UNSEEN" />
         </h1>
         <p className="text-[2.5rem] text-justify mb-12">
@@ -23,7 +44,7 @@ const Contact = (props) => {
             our customers&#39; unique" needs. For us, design" transcends mere aesthetics; it&#39;s a profound connection
             rooted in empathy", compassion", and an authentic concern for the individual we work with.
         </p>
-    </div>
+    </motion.div>
   );
 }
 

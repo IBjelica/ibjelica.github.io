@@ -5,16 +5,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
   margin: 0;
   padding: 0;
-}
 
-html {
-  overflow: hidden;
+  background-color: $primary-clr;
 }
 
 body {
-  height: 100dvh;
+  // height: 100dvh;
   width: 100vw;
 }
 

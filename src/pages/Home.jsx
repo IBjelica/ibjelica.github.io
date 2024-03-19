@@ -6,7 +6,6 @@ import Trailer from "../components/Trailer";
 import HoveredContextProvider from "../components/contexts/HoveredContext";
 
 const Home = () => {
-
     const stickyElements = useRef([])
 
     return (
@@ -17,7 +16,7 @@ const Home = () => {
 
             <Socials ref={stickyElements} />
             
-            {/* <Trailer stickyElements={stickyElements} /> */}
+            <Trailer stickyElements={stickyElements} />
         </HoveredContextProvider>
     )
 }
