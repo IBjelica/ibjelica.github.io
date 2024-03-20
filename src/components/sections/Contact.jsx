@@ -21,8 +21,8 @@ const Contact = (props) => {
   useEffect(() => {
     const { top } = ref.current.getBoundingClientRect()
     
-    const widthPercentage = (scrollY / Math.round(top)) * 30 + 70;
-    setWidth( Math.min(Math.max(widthPercentage, 70), 100) )
+    const widthPercentage = scrollY > Math.round(top) ? 100 : (scrollY / Math.round(top)) * 30 + 70;
+    setWidth( widthPercentage )
   }, [scrollY])
 
   return (
@@ -31,19 +31,21 @@ const Contact = (props) => {
       className="contact-section"
       style={{ width: `${width}%` }}
     >
-        <h1 className="title uppercase text-[6rem] tracking-[0.2rem] text-justify mb-[6.25rem]">
-            WE <Word text="EMBRACE" /> THE <Word text="ART" /> OF THE <Word text="UNSEEN" />
+      <div className="content">
+        <h1 className="title">
+            we <Word text="EMBRACE" /> the <Word text="ART" /> of the <Word text="UNSEEN" />
         </h1>
-        <p className="text-[2.5rem] text-justify mb-12">
+        <p>
             We believe that the true magic" of web design" and development" lies beneath the surface. While others may only
             see the final results, we take pride in the dedication", the intricate process", and the creative gymnastics
             that unfold within our team.
         </p>
-        <p className="text-[2.5rem] text-justify mb-12">
+        <p>
             Our approach revolves around a commitment to understanding and constructing value" by immersing ourselves in
             our customers&#39; unique" needs. For us, design" transcends mere aesthetics; it&#39;s a profound connection
             rooted in empathy", compassion", and an authentic concern for the individual we work with.
         </p>
+      </div>
     </motion.div>
   );
 }

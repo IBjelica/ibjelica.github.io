@@ -13,17 +13,17 @@ const Hero = () => {
     
     return (
         <div
-            className="hero-section w-screen flex flex-col justify-between p-[$page-padding]"
+            className="hero-section"
         >
-            <div className="row max-w-[90%] w-[90%] max-h-[32%] grid grid-flow-col grid-cols-7">
+            <div className="row first">
                 { splitWord("Nothing") }
             </div>
 
-            <div className="row max-w-[90%] w-[65%] max-h-[32%] grid grid-flow-col grid-cols-6">
+            <div className="row second">
                 { splitWord("to see") }
             </div>
 
-            <div className="row max-w-[90%] w-[45%] max-h-[32%] grid grid-flow-col grid-cols-4">
+            <div className="row third">
                 { splitWord("here") }
             </div>
         </div>

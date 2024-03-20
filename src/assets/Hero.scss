@@ -1,6 +1,33 @@
-@import '../assets/Variables';
+@import './Variables';
 
 .hero-section {
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    height: 100lvh;
+
     color: $text-clr;
+    
     background: $primary-clr;
+
+    .row {
+        display: grid;
+        grid-auto-flow: column;
+        height: 32%;
+
+        &.first {
+            width: 90%;
+            grid-template-columns: repeat(7, minmax(0, 1fr));
+        }
+
+        &.second {
+            width: 65%;
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+        }
+
+        &.third {
+            width: 45%;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+    }
 }
