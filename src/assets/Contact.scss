@@ -8,35 +8,29 @@
     position: sticky;
     top: 0;
     width: 100vw;
-    max-height: 100lvh;
 
     padding: $page-padding;
 
     color: $primary-clr;
     background-color: $text-clr;
-    
-    .content {
-        width: clamp(280px, 85vw, 1200px);
 
-        .title {
-            margin-bottom: 6rem;
+    .title {
+        margin-bottom: 6rem;
 
-            font-size: clamp(3rem, 0rem + 5.3333vw, 4rem);
-            letter-spacing: .2rem;
-            text-align: center;
-            text-transform: uppercase;
+        font-size: clamp(3rem, 0rem + 5.3333vw, 4rem);
+        letter-spacing: .2rem;
+        text-transform: uppercase;
 
-            span {
-                font-size: clamp(4rem, -0.6667rem + 8.8889vw, 6rem);
-                vertical-align: baseline;
-            }
+        span {
+            font-size: clamp(4rem, -0.6667rem + 8.8889vw, 6rem);
+            vertical-align: baseline;
         }
+    }
 
-        p {
-            font-size: 1.9rem;
-            text-align: justify;
+    p {
+        font-size: 1.9rem;
+        text-align: justify;
 
-            margin-bottom: 2rem;
-        }
+        margin-bottom: 2rem;
     }
 }
