@@ -4,33 +4,9 @@ import Word from "../../components/Word";
 import '../../assets/Contact.scss';
 
 const Contact = (props) => {
-  const ref = useRef(null)
-  const [ scrollY, setScrollY ] = useState(0)
-  const [ width, setWidth ] = useState(70)
-  
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(Math.round(window.scrollY));
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    
-    return () => { window.removeEventListener('scroll', handleScroll) }
-  }, [])
-
-  useEffect(() => {
-    const { top } = ref.current.getBoundingClientRect()
-    
-    const widthPercentage = scrollY > Math.round(top) ? 100 : (scrollY / Math.round(top)) * 30 + 70;
-    setWidth( widthPercentage )
-  }, [scrollY])
 
   return (
-    <motion.div
-    ref={ref}
-      className="contact-section"
-      style={{ width: `${width}%` }}
-    >
+    <div className="contact-section">
       <div className="content">
         <h1 className="title">
             we <Word text="EMBRACE" /> the <Word text="ART" /> of the <Word text="UNSEEN" />
@@ -46,7 +22,7 @@ const Contact = (props) => {
             rooted in empathy", compassion", and an authentic concern for the individual we work with.
         </p>
       </div>
-    </motion.div>
+    </div>
   );
 }
 

@@ -1,12 +1,12 @@
 @import "../assets/Variables";
 
 .socials {
-    position: relative;
     display: grid;
-    position: relative;
     grid-template-rows: repeat(3, 1fr);
     justify-items: left;
     align-content: space-evenly;
+    position: sticky;
+    top: 0;
     width: 100%;
     height: 100vh;
     padding: $page-padding;
