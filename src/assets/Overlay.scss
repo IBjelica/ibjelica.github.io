@@ -1,0 +1,57 @@
+@import './Variables';
+
+.overlay {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    max-width: 100vw;
+
+    background-color: transparent;
+
+    pointer-events: none;
+
+    .background {
+        position: absolute;
+        inset: 0;
+        background-color: $primary-clr;
+    }
+
+    .circle {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        position: absolute;
+        aspect-ratio: 1;
+    
+        border-radius: 100%;
+    
+        rotate: -40deg;
+
+        backdrop-filter: blur(1px);
+    
+        background: hsla($from-h, $from-s, $from-l, $o);
+        background: -moz-linear-gradient(360deg, hsla($from-h, $from-s, $from-l, $o) 0%, hsla($to-h, $to-s, $to-l, $o) 100%);
+        background: -webkit-linear-gradient(360deg, hsla($from-h, $from-s, $from-l, $o) 0%, hsla($to-h, $to-s, $to-l, $o) 100%);
+        background: linear-gradient(360deg, hsla($from-h, $from-s, $from-l, $o) 0%, hsla($to-h, $to-s, $to-l, $o) 100%);
+    }
+
+    .circleBlur {
+        position: absolute;
+        width: 40lvh;
+        aspect-ratio: 1;
+    
+        border-radius: 100%;
+    
+        rotate: -40deg;
+
+        filter: blur(6lvh);
+        backdrop-filter: blur(6lvh);
+    
+        background: hsla($from-h, $from-s, $from-l, $o);
+        background: -moz-linear-gradient(360deg, hsla($from-h, $from-s, $from-l, $o) 0%, hsla($to-h, $to-s, $to-l, $o) 100%);
+        background: -webkit-linear-gradient(360deg, hsla($from-h, $from-s, $from-l, $o) 0%, hsla($to-h, $to-s, $to-l, $o) 100%);
+        background: linear-gradient(360deg, hsla($from-h, $from-s, $from-l, $o) 0%, hsla($to-h, $to-s, $to-l, $o) 100%);
+    }
+}

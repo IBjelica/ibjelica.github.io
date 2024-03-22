@@ -1,16 +1,21 @@
 import { useEffect, useContext, useState, useRef } from 'react';
-import { animate, motion, transform, useMotionValue, useSpring } from 'framer-motion';
+import { animate, motion, transform, useMotionValue, useSpring, useScroll, useTransform } from 'framer-motion';
 import { HoveredContext } from './contexts/HoveredContext';
 import '../assets/Trailer.scss';
 
 const Trailer = (props) => {
     const stickyElements = props.stickyElements
     const [ isHovered, setIsHovered ] = useState(false)
+    
     const trailerRef = useRef()
     const trailerSize = 130
+
+    const { scrollYProgress } = useScroll()
+    const trailerOpacity = useTransform(scrollYProgress, [0, .25, .28], [0, 0, 1])
+
     const mouse = {
-        x: useMotionValue(0),
-        y: useMotionValue(0)
+        x: useMotionValue(window.innerWidth / 2 - trailerSize / 2),
+        y: useMotionValue(window.innerHeight / 2 - trailerSize / 2)
     }
 
     const smoothOptions = { damping: 20, stiffness: 200, mass: 0.2 }
@@ -88,6 +93,7 @@ const Trailer = (props) => {
             className="trailer"
             ref={trailerRef}
             style={{
+                opacity: trailerOpacity,
                 left: smoothMouse.x,
                 top: smoothMouse.y,
                 scaleX: scale.x,

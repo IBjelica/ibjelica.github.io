@@ -3,14 +3,12 @@
 .socials {
     display: flex;
     justify-content: space-between;
-    position: sticky;
-    top: 0;
     width: 100%;
-    padding: $page-padding;
+    padding: 4rem $page-padding;
 
-    color: $text-clr;
+    color: $primary-clr;
 
-    background-color: $primary-clr;
+    background-color: $text-clr;
 
     &__link {
         display: flex;
@@ -34,10 +32,11 @@
             
                 &:hover {
                     width: 150%;
-                    height: 250%;
-                    left: -25%;
-                    top: -75%;
-                
+                    height: 600%;
+                    left: 50%;
+                    top: 50%;
+
+                    transform: translate(-50%, -50%);
                 }
             }
         }
