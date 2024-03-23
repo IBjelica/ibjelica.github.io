@@ -11,7 +11,7 @@ const Trailer = (props) => {
     const trailerSize = 130
 
     const { scrollYProgress } = useScroll()
-    const trailerOpacity = useTransform(scrollYProgress, [0, .25, .28], [0, 0, 1])
+    const trailerOpacity = useTransform(scrollYProgress, [0, .6, .8], [0, 0, 1])
 
     const mouse = {
         x: useMotionValue(window.innerWidth / 2 - trailerSize / 2),

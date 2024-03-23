@@ -3,6 +3,7 @@
 .stretcher {
     padding-top: 120lvh;
 }
+
 .contact-section {
     display: flex;
     flex-direction: column;
@@ -16,6 +17,8 @@
 
     color: $primary-clr;
     background-color: $text-clr;
+
+    z-index: 2;
 
     .title {
         margin-bottom: 6rem;
