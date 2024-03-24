@@ -3,12 +3,14 @@ import { animate, motion, transform, useMotionValue, useSpring, useScroll, useTr
 import { HoveredContext } from './contexts/HoveredContext';
 import '../assets/Trailer.scss';
 
+// TODO: trailer appears doubled when the page is scrolled enough and it is hovering over nothing to see here letters
+
 const Trailer = (props) => {
     const stickyElements = props.stickyElements
     const [ isHovered, setIsHovered ] = useState(false)
     
     const trailerRef = useRef()
-    const trailerSize = 130
+    const trailerSize = isHovered ? 300 : 130
 
     const { scrollYProgress } = useScroll()
     const trailerOpacity = useTransform(scrollYProgress, [0, .6, .8], [0, 0, 1])

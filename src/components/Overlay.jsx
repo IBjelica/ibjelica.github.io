@@ -8,7 +8,7 @@ import '../assets/Overlay.scss';
 const Overlay = (props, ref) => {
     const { scrollYProgress } = useScroll()
     const size = useTransform(scrollYProgress, [0, .15, .2], ['20vw', '150vw', '200vw'])
-    const circleAlpha = useTransform(scrollYProgress, [0, .2, .25], [1, 1, .2])
+    const circleAlpha = useTransform(scrollYProgress, [0, .2, .25], [1, 1, .3])
     const backgroundAlpha = useTransform(scrollYProgress, [0, .15, .2], [1, 1, 0])
     const circleBlurAlpha = useTransform(scrollYProgress, [0, .25], [1, 0])
 
