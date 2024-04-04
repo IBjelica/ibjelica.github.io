@@ -19,7 +19,7 @@ const Home = () => {
             </Contact>
 
             <Trailer stickyElements={stickyElements} />
-            <Overlay ref={circleElement} />
+            {/* <Overlay ref={circleElement} /> */}
         </HoveredContextProvider>
     )
 }

@@ -10,7 +10,7 @@ const Socials = (props, ref) => {
     ]
 
     return (
-        <div className='socials text-[5rem] tracking-[0.2rem]'>
+        <div className='socials'>
 
             {
                 links.map((link, i) => {

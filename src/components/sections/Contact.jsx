@@ -11,18 +11,16 @@ const Contact = ({children}) => {
   const targetRef = useRef(null)
 
   return (
-    <div ref={containerRef} className="stretcher">
-      <div ref={targetRef} className="contact-section">
+    <div ref={targetRef} className="contact-section">
         <h1 className="title">
-          we <span className="crazy">EMBRACE</span> the <span className="crazy">ART</span> of the <span className="crazy">UNSEEN</span>
+            we EMBRACE the ART of the UNSEEN
         </h1>
         
         <Paragraph text={paragraph1} start="0.8" end="0.6" />
 
-        <Paragraph text={paragraph2} start="0.7" end="0.5" />
+        <Paragraph text={paragraph2} start="0.75" end="0.55" />
         
         {children}
-      </div>
     </div>
   );
 }

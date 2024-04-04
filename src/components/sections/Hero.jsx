@@ -39,30 +39,22 @@ const Hero = ({children}) => {
                 }}
                 transition={{type: "tween", ease: "backOut"}}
             >
-                <div className="row first">
-                    { splitWord("Nothing") }
+                <div className="row first" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+                    Nothing to
                 </div>
 
-                <div className="row second">
-                    { splitWord("to see") }
-                </div>
-
-                <div className="row third">
-                    { splitWord("here") }
+                <div className="row second" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+                    see here
                 </div>
             </motion.div>
             
             <div className="hero-section body">
-                <div className="row first">
-                    { splitWord("Nothing") }
+            <div className="row first" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+                    Nothing to
                 </div>
 
-                <div className="row second">
-                    { splitWord("to see") }
-                </div>
-
-                <div className="row third">
-                    { splitWord("here") }
+                <div className="row second" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+                    see here
                 </div>
             </div>
 

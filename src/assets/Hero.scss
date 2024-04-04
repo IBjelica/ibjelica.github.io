@@ -8,21 +8,33 @@
     background: $primary-clr;
 
     .hero-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         position: relative;
         width: 100vw;
         height: 100lvh;
     
         color: $text-clr;
+        font-size: clamp(3rem, 10vw + 1rem, 11.25rem);
+        line-height: 214px;
+        text-align: center;
+        text-transform: uppercase;
         
         background: $primary-clr;
 
+        &.body {
+            font-family: 'Helvetica Neue';
+        }
+
         &.mask {
             position: absolute;
+
             font-family: 'Rabbithole';
 
             mask-image: url('../assets/images/mask.svg');
             mask-repeat: no-repeat;
-
             mask-position: 50%;
 
             pointer-events: none;
@@ -42,27 +54,6 @@
                 background: linear-gradient(360deg, hsla($from-h, $from-s, $from-l, $o) 0%, hsla($to-h, $to-s, $to-l, $o) 100%);
                 
                 mix-blend-mode: screen;
-            }
-        }
-    
-        .row {
-            display: grid;
-            grid-auto-flow: column;
-            height: 32%;
-    
-            &.first {
-                width: 90%;
-                grid-template-columns: repeat(7, minmax(0, 1fr));
-            }
-    
-            &.second {
-                width: 65%;
-                grid-template-columns: repeat(6, minmax(0, 1fr));
-            }
-    
-            &.third {
-                width: 45%;
-                grid-template-columns: repeat(4, minmax(0, 1fr));
             }
         }
     }

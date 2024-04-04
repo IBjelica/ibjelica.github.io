@@ -23,6 +23,15 @@
             width: 100%;
             height: 40%;
 
+            span {
+                font-size: clamp(2rem, 1rem + 2vw, 4rem);
+                line-height: 76px;
+                letter-spacing: 0.03em;
+                text-transform: uppercase;
+
+                color: #000000;
+            }
+
             .bounds {
                 position: absolute;
                 width: 100%;

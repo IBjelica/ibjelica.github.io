@@ -10,10 +10,10 @@ const Trailer = (props) => {
     const [ isHovered, setIsHovered ] = useState(false)
     
     const trailerRef = useRef()
-    const trailerSize = isHovered ? 300 : 130
+    const trailerSize = 130
 
     const { scrollYProgress } = useScroll()
-    const trailerOpacity = useTransform(scrollYProgress, [0, .6, .8], [0, 0, 1])
+    const trailerOpacity = useTransform(scrollYProgress, [0, .4, .5], [0, 0, .8])
 
     const mouse = {
         x: useMotionValue(window.innerWidth / 2 - trailerSize / 2),

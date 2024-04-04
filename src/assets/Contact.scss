@@ -1,8 +1,8 @@
 @import './Variables';
 
-.stretcher {
-    padding-top: 120lvh;
-}
+// .stretcher {
+//     padding-top: 120lvh;
+// }
 
 .contact-section {
     display: flex;
@@ -23,9 +23,15 @@
     .title {
         margin-bottom: 6rem;
 
-        font-size: clamp(3rem, 0rem + 5.3333vw, 4rem);
-        letter-spacing: .2rem;
+        font-size: clamp(4rem, 10vw + 1rem, 6rem);
+        
+        line-height: 114px;
+        letter-spacing: 0.03em;
+        text-align: justify;
         text-transform: uppercase;
+        text-transform: uppercase;
+
+        color: #000000;
 
         span {
             font-family: 'RabbitHole';
