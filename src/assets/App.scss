@@ -1,5 +1,9 @@
 @import './Variables';
 
+html {
+  scroll-snap-type: y mandatory;
+}
+
 #root {
   display: flex;
   flex-direction: column;
@@ -15,6 +19,9 @@
 body {
   // height: 100dvh;
   width: 100vw;
+
+  scroll-snap-type: y mandatory;
+
 }
 
 ::selection {

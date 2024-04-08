@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from "react";
-import { useTransform, motion, useScroll, animate } from "framer-motion";
+import { useTransform, motion, useScroll, animate, useSpring } from "framer-motion";
 import Paragraph from "../Paragraph";
 import '../../assets/Contact.scss';
 
@@ -7,21 +7,32 @@ const paragraph1 = "We believe that the true magic of web design and development
 const paragraph2 = "Our approach revolves around a commitment to understanding and constructing value by immersing ourselves in our customers' unique needs. For us, design transcends mere aesthetics; it's a profound connection rooted in empathy, compassion, and an authentic concern for the individual we work with."
 
 const Contact = ({children}) => {
-  const containerRef = useRef(null)
   const targetRef = useRef(null)
+  const { scrollY } = useScroll()
+  // const windowHeight = window.innerHeight * -1
+  // const sectionHeight = targetRef.current?.getBoundingClientRect().height * -1
+  // const top = useTransform(scrollY, [700, 800], [0, 0])
+  // const top = scrollY
+  // console.log(scrollY.get())
+  
 
   return (
-    <div ref={targetRef} className="contact-section">
+    <motion.div
+      ref={targetRef}
+      className="contact-section"
+      style={{y: top}}
+      transition={{type: "inertia", stiffness: 10}}
+    >
         <h1 className="title">
             we EMBRACE the ART of the UNSEEN
         </h1>
         
-        <Paragraph text={paragraph1} start="0.8" end="0.6" />
+        <Paragraph text={paragraph1} start="0.85" end="0.70" />
 
-        <Paragraph text={paragraph2} start="0.75" end="0.55" />
+        <Paragraph text={paragraph2} start="0.8" end="0.6" />
         
         {children}
-    </div>
+    </motion.div>
   );
 }
 

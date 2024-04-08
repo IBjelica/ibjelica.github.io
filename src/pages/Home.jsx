@@ -11,7 +11,7 @@ const Home = () => {
     const circleElement = useRef(null)
 
     return (
-        <HoveredContextProvider>
+        <>
             <Hero />
 
             <Contact circleElement={circleElement} >
@@ -19,8 +19,8 @@ const Home = () => {
             </Contact>
 
             <Trailer stickyElements={stickyElements} />
-            {/* <Overlay ref={circleElement} /> */}
-        </HoveredContextProvider>
+
+        </>
     )
 }
 
