@@ -1,8 +1,9 @@
-import { forwardRef } from 'react';
-import Magnetic from '../components/magnetic'
+import { useState, useEffect, forwardRef } from 'react';
+import { motion } from 'framer-motion';
 import '../assets/Socials.scss';
 
-const Socials = (props, ref) => {
+const Socials = (props) => {
+    const { isHovered, setIsHovered } = props
     const links = [
         { text: 'Email', href: 'emailto:contact@igorbelica.com' },
         { text: 'LinkedIn', href: 'https://linkedin.com'},
@@ -12,25 +13,26 @@ const Socials = (props, ref) => {
     return (
         <div className='socials'>
 
-            {
-                links.map((link, i) => {
-                    return (
-                        <Magnetic key={i} className="socials__link">
-                            <div className="socials__link__content">
-                                <a
-                                    ref={ (el) => { return ref.current[i] = el } }
-                                    className="bounds"
-                                    href={link.href}
-                                ></a>
-                                <span >{link.text}</span>
-                            </div>
-                        </Magnetic>
-                    )
-                })
-            }
+            <div className="socials-section">
+                {
+                    links.map((link, i) => {
+                        return (
+                            <a
+                                key={i}
+                                className="socials__link"
+                                href={link.href}
+                                onMouseEnter={() => setIsHovered(true)}
+                                onMouseLeave={() => setIsHovered(false)}
+                            >
+                                {link.text}
+                            </a>
+                        )
+                    })
+                }
+            </div>
 
         </div>
     )
 }
 
-export default forwardRef(Socials);
+export default Socials;

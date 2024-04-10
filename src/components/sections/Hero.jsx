@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Letter from "../../components/Letter";
 import '../../assets/Hero.scss';
 
 const Hero = ({children}) => {
@@ -19,15 +18,6 @@ const Hero = ({children}) => {
             window.removeEventListener('mousemove', handleMouseMove)
         }
     })
-    
-    const splitWord = (str) => {
-        return str.split('').map((char, index) => {
-            return(
-                <Letter key={index} char={char} isHovered={isHovered} setIsHovered={setIsHovered} />
-            )
-        })
-    }
-        
 
     return (
         <section className="hero-section-wrapper">
@@ -49,7 +39,7 @@ const Hero = ({children}) => {
             </motion.div>
             
             <div className="hero-section body">
-            <div className="row first" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+                <div className="row first" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
                     Nothing to
                 </div>
 
