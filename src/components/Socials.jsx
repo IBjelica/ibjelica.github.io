@@ -1,9 +1,7 @@
-import { useState, useEffect, forwardRef } from 'react';
-import { motion } from 'framer-motion';
 import '../assets/Socials.scss';
 
 const Socials = (props) => {
-    const { isHovered, setIsHovered } = props
+    const { setIsHovered } = props
     const links = [
         { text: 'Email', href: 'emailto:contact@igorbelica.com' },
         { text: 'LinkedIn', href: 'https://linkedin.com'},

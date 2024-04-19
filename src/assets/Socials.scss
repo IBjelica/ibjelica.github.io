@@ -6,6 +6,16 @@
     }
 }
 
+.body {
+    .socials {
+        .socials-section {
+            .socials__link {
+                letter-spacing: .1em;
+            }
+        }
+    }
+}
+
 .socials {
     width: 100%;
     position: relative;
@@ -15,11 +25,12 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
+        flex-wrap: wrap;
 
         .socials__link {
             font-family: 'Helvetica Neue';
             font-weight: 300;
-            font-size: 64px;
+            font-size: clamp(50px, 10vw + 1rem, 64px);
             line-height: 76px;
             letter-spacing: 0.03em;
             text-transform: uppercase;

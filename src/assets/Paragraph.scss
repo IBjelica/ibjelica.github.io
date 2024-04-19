@@ -1,18 +1,24 @@
-.paragraph {
+.paragraphs {
     display: flex;
-    flex-wrap: wrap;
-    // row-gap: 12px;
-    column-gap: 12px;
-
-    line-height: 1;
-
-    .word {
-        position: relative;
-
-        .shadow {
-            position: absolute;
-            
-            opacity: 0.1;
+    flex-direction: column;
+    row-gap: 2rem;
+    
+    .paragraph {
+        display: flex;
+        flex-wrap: wrap;
+        // row-gap: 12px;
+        column-gap: 12px;
+    
+        line-height: 1.2em;
+    
+        .word {
+            position: relative;
+    
+            .shadow {
+                position: absolute;
+                
+                opacity: 0.03;
+            }
         }
     }
 }

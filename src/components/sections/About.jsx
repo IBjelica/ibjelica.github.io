@@ -17,19 +17,20 @@ const About = () => {
     const handleMouseMove = (e) => {
         setMousePosition({x: e.clientX, y: e.clientY})
     }
+
+    const handleScroll = () => {
+        setSectionTop( ref.current.getBoundingClientRect().top )
+    }
     
     useEffect(() => {
         window.addEventListener('mousemove', handleMouseMove)
-        return () => {
-            window.removeEventListener('mousemove', handleMouseMove)
-        }
+        return () => { window.removeEventListener('mousemove', handleMouseMove) }
     })
 
     useEffect(() => {
-        window.addEventListener('scroll', () => {
-            setSectionTop( ref.current.getBoundingClientRect().top )
-        })
-    }, [])
+        window.addEventListener('scroll', handleScroll)
+        return () => { window.addEventListener('scroll', handleScroll) }
+    })
 
     return (
         <div
@@ -48,11 +49,13 @@ const About = () => {
                     we embrace the art of the unseen
                 </h1>
                 
-                <Paragraph text={paragraph1} start="0.85" end="0.70" />
+                <div className="paragraphs">
+                    <Paragraph text={paragraph1} />
 
-                <Paragraph text={paragraph2} start="0.8" end="0.65" />
+                    <Paragraph text={paragraph2} />
+                </div>
 
-                <Socials isHovered={isHovered} setIsHovered={setIsHovered} />
+                <Socials />
             </motion.div>
             
             <div className="about body">
@@ -60,17 +63,16 @@ const About = () => {
                     we embrace the art of the unseen
                 </h1>
                 
-                <Paragraph text={paragraph1} start="0.85" end="0.70" />
+                <div className="paragraphs">
+                    <Paragraph text={paragraph1} start="0.9" end="0.45" />
 
-                <Paragraph text={paragraph2} start="0.8" end="0.65" />
+                    <Paragraph text={paragraph2} start="0.8" end="0.62" />
+                </div>
 
-                <Socials isHovered={isHovered} setIsHovered={setIsHovered} />
+                <Socials setIsHovered={setIsHovered} />
             </div>
         </div>
     )
 }
 
 export default About;
-
-// TODO: width of socials words
-// TODO: snap scroll bug on chrome

@@ -4,15 +4,19 @@
     position: relative;
     width: 100%;
     min-height: 100lvh;
-
-    scroll-snap-align: start;
+    margin-top: 110lvh;
 
     color: $primary-clr;
 
     background-color: $text-clr;
 
     .about {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 4rem;
         width: 100%;
+        min-height: 100lvh;
         position: relative;
         padding: $page-padding;
 
@@ -51,9 +55,7 @@
             }
         }
 
-        .title {
-            margin-bottom: 6rem;
-    
+        .title {    
             font-size: clamp(4rem, 10vw + 1rem, 6rem);
             
             line-height: 114px;
@@ -68,8 +70,6 @@
         p {
             font-size: 1.9rem;
             text-align: justify;
-    
-            margin-bottom: 2rem;
         }
     }
 }
