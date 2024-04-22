@@ -17,12 +17,20 @@
         height: 100lvh;
     
         color: $text-clr;
-        font-size: clamp(3rem, 10vw + 1rem, 11.25rem);
+        font-size: clamp(3.5rem, 8vw + 1rem, 11.25rem);
+        letter-spacing: .2em;
         line-height: 214px;
         text-align: center;
         text-transform: uppercase;
         
         background: $primary-clr;
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            width: 80%;
+            justify-content: space-between;
+        }
 
         &.body {
             font-family: 'Helvetica Neue';

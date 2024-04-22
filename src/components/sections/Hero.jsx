@@ -30,21 +30,25 @@ const Hero = ({children}) => {
                 transition={{type: "tween", ease: "backOut"}}
             >
                 <div className="row first" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                    Nothing to
+                    <span>Nothing</span>
+                    <span>to</span>
                 </div>
 
                 <div className="row second" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                    see here
+                    <span>see</span>
+                    <span>here</span>
                 </div>
             </motion.div>
             
             <div className="hero-section body">
                 <div className="row first" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                    Nothing to
+                    <span>Nothing</span>
+                    <span>to</span>
                 </div>
 
                 <div className="row second" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                    see here
+                    <span>see</span>
+                    <span>here</span>
                 </div>
             </div>
 
