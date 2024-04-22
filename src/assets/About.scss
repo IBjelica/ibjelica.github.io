@@ -55,6 +55,8 @@
                 background: linear-gradient(360deg, hsla($from-h, $from-s, $from-l, $o) 0%, hsla($to-h, $to-s, $to-l, $o) 100%);
                 
                 mix-blend-mode: darken;
+
+                pointer-events: none;
             }
         }
 

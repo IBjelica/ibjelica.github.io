@@ -27,8 +27,8 @@ const About = () => {
     }
     
     useEffect(() => {
-        window.addEventListener('mousemove drag', handleMouseMove)
-        return () => { window.removeEventListener('mousemove drag', handleMouseMove) }
+        window.addEventListener('mousemove', handleMouseMove)
+        return () => { window.removeEventListener('mousemove', handleMouseMove) }
     })
 
     useEffect(() => {
@@ -49,9 +49,9 @@ const About = () => {
                 }}
                 transition={{type: "tween", ease: "backOut"}}
             >
-                <h1 className="title rabbit">
+                <h2 className="title rabbit">
                     we embrace the art of the unseen
-                </h1>
+                </h2>
                 
                 <div className="paragraphs">
                     <Paragraph text={paragraph1} />
@@ -70,13 +70,13 @@ const About = () => {
             </motion.div>
             
             <div className="about body">
-                <h1
+                <h2
                     className="title"
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                 >
                     we embrace the art of the unseen
-                </h1>
+                </h2>
                 
                 <div className="paragraphs">
                     <Paragraph text={paragraph1} start="0.9" end="0.45" />

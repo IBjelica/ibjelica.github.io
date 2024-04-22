@@ -41,15 +41,15 @@ const Hero = ({children}) => {
             </motion.div>
             
             <div className="hero-section body">
-                <div className="row first" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+                <h1 className="row first" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
                     <span>Nothing</span>
                     <span>to</span>
-                </div>
+                </h1>
 
-                <div className="row second" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+                <h1 className="row second" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
                     <span>see</span>
                     <span>here</span>
-                </div>
+                </h1>
             </div>
 
             {children}
