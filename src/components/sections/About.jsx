@@ -27,8 +27,8 @@ const About = () => {
     }
     
     useEffect(() => {
-        window.addEventListener('mousemove', handleMouseMove)
-        return () => { window.removeEventListener('mousemove', handleMouseMove) }
+        window.addEventListener('mousemove drag', handleMouseMove)
+        return () => { window.removeEventListener('mousemove drag', handleMouseMove) }
     })
 
     useEffect(() => {
