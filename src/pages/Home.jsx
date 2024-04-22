@@ -13,3 +13,5 @@ const Home = () => {
 }
 
 export default Home;
+
+// TODO: press and drag on phones

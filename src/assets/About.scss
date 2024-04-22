@@ -23,6 +23,10 @@
         &.body {
             position: relative;
             font-family: "Helvetica Neue";
+
+            .title {
+                letter-spacing: .15em;
+            }
         }
 
         &.mask {
@@ -39,8 +43,7 @@
 
             z-index: 1;
 
-            &::after {
-                content: '';
+            .gradient {
                 position: absolute;
                 inset: 0;
                 width: 100%;

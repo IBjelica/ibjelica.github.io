@@ -12,7 +12,11 @@ const About = () => {
     const [ sectionTop, setSectionTop ] = useState(0)
     const [ mousePosition, setMousePosition ] = useState({x: 0, y: 0})
     const [ isHovered, setIsHovered ] = useState(false)
-    const size = isHovered ? 230 : 130
+    const [ isHoveredSocials, setIsHoveredSocials ] = useState(false)
+    const size = isHovered ? 230 : isHoveredSocials ? 230 : 130
+    const gradient = 'linear-gradient(360deg, hsla(127, 100%, 50%, 0.7) 0%, hsla(226, 100%, 50%, 0.7) 100%)'
+    const hoverGradient = 'linear-gradient(360deg, hsla(17, 100%, 50%, 0.6) 0%, hsla(26, 100%, 50%, 0.6) 100%)'
+    const bgColor = isHoveredSocials ? hoverGradient : gradient
 
     const handleMouseMove = (e) => {
         setMousePosition({x: e.clientX, y: e.clientY})
@@ -45,7 +49,7 @@ const About = () => {
                 }}
                 transition={{type: "tween", ease: "backOut"}}
             >
-                <h1 className="title">
+                <h1 className="title rabbit">
                     we embrace the art of the unseen
                 </h1>
                 
@@ -56,10 +60,21 @@ const About = () => {
                 </div>
 
                 <Socials />
+
+                <motion.div
+                    className="gradient"
+                    animate={{
+                        background: bgColor
+                    }}
+                ></motion.div>
             </motion.div>
             
             <div className="about body">
-                <h1 className="title">
+                <h1
+                    className="title"
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                >
                     we embrace the art of the unseen
                 </h1>
                 
@@ -69,7 +84,7 @@ const About = () => {
                     <Paragraph text={paragraph2} start="0.8" end="0.62" />
                 </div>
 
-                <Socials setIsHovered={setIsHovered} />
+                <Socials setIsHovered={setIsHoveredSocials} />
             </div>
         </div>
     )
