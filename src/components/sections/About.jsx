@@ -50,7 +50,7 @@ const About = () => {
                 transition={{type: "tween", ease: "backOut"}}
             >
                 <h2 className="title rabbit">
-                    we embrace the art of the unseen
+                    <span>we</span> <span>embrace</span> <span>the</span> <span>art</span> <span>of</span> <span>the</span> <span>unseen</span>
                 </h2>
                 
                 <div className="paragraphs">
@@ -75,7 +75,7 @@ const About = () => {
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                 >
-                    we embrace the art of the unseen
+                    <span>we</span> <span>embrace</span> <span>the</span> <span>art</span> <span>of</span> <span>the</span> <span>unseen</span>
                 </h2>
                 
                 <div className="paragraphs">
