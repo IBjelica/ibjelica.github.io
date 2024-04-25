@@ -33,7 +33,7 @@
 
         &.body {
             font-family: 'Helvetica Neue';
-            letter-spacing: .1em;
+            // letter-spacing: .1em;
         }
 
         &.mask {
@@ -48,6 +48,11 @@
             pointer-events: none;
         
             z-index: 1;
+
+            @media (pointer: coarse) {
+                mask-position: 50% !important;
+                mask-size: 230px !important;
+            }
 
             &::after {
                 content: '';

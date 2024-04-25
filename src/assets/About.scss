@@ -58,6 +58,11 @@
 
                 pointer-events: none;
             }
+
+            @media (pointer: coarse) {
+                // mask-position: 50% !important;
+                mask-size: 230px !important;
+            }
         }
 
         .title {    
