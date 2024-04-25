@@ -6,7 +6,7 @@ const Home = () => {
 
     return (
         <>
-            <Hero />
+            <Heros />
             <About />
         </>
     )
@@ -14,6 +14,5 @@ const Home = () => {
 
 export default Home;
 
-// TODO: press and drag on phones
 // TODO: split fancy words to have same width
 // TODO: touchscreen mask fixed position
