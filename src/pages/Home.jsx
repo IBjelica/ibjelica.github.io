@@ -13,6 +13,3 @@ const Home = () => {
 }
 
 export default Home;
-
-// TODO: split fancy words to have same width
-// TODO: touchscreen mask fixed position

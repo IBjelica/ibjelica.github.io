@@ -23,10 +23,6 @@
         &.body {
             position: relative;
             font-family: "Helvetica Neue";
-
-            .title {
-                letter-spacing: .15em;
-            }
         }
 
         &.mask {
@@ -35,7 +31,6 @@
 
             mask-image: url('../assets/images/mask.svg');
             mask-repeat: no-repeat;
-            mask-position: 50%;
 
             background-color: $text-clr;
 
@@ -65,14 +60,18 @@
             }
         }
 
-        .title {    
-            font-size: clamp(4rem, 10vw + 1rem, 6rem);
+        .title {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: .5em;
+
+            font-size: clamp(3.4rem, 10vw + 1rem, 6rem);
             
             line-height: 114px;
-            letter-spacing: 0.03em;
             text-align: justify;
             text-transform: uppercase;
-            text-transform: uppercase;
+            letter-spacing: .1em;
+
     
             color: #000000;
         }

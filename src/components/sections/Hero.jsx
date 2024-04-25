@@ -1,26 +1,53 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import '../../assets/Hero.scss';
 
 const Hero = ({children}) => {
-
+    const ref = useRef(null)
     const [ mousePosition, setMousePosition ] = useState({x: 0, y: 0})
     const [ isHovered, setIsHovered ] = useState(false)
     const size = isHovered ? 300 : 130
+
+    const isTouch = window.matchMedia("(pointer: coarse)").matches
+
+    const titleRef = useRef(null)
+    const title = "Nothing to see here"
+    const splitTitle = title.split(' ').map((word, i) => {
+        return {
+            text: word,
+            width: 0
+        }
+    })
+
+    const setTitleWidths = () => {
+
+        titleRef.current?.querySelectorAll('span').forEach(element => {
+            splitTitle.filter(x => {
+                if( x.text == element.textContent ) {
+                    x.width = element.getBoundingClientRect().width
+                }
+            })
+        });
+    }
 
     const handleMouseMove = (e) => {
         setMousePosition({x: e.clientX, y: e.clientY})
     }
     
     useEffect(() => {
-        window.addEventListener('mousemove', handleMouseMove)
-        return () => {
-            window.removeEventListener('mousemove', handleMouseMove)
+        if (!isTouch) {
+            ref.current?.addEventListener('mousemove', handleMouseMove)
+            return () => {
+                ref.current?.removeEventListener('mousemove', handleMouseMove)
+            }
         }
     })
 
     return (
-        <section className="hero-section-wrapper">
+        <section
+            ref={ref}
+            className="hero-section-wrapper"
+        >
             <motion.div
                 className="hero-section mask"
                 animate={{
@@ -29,26 +56,32 @@ const Hero = ({children}) => {
                 }}
                 transition={{type: "tween", ease: "backOut"}}
             >
-                <div className="row first" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                    <span>Nothing</span>
-                    <span>to</span>
-                </div>
-
-                <div className="row second" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                    <span>see</span>
-                    <span>here</span>
-                </div>
+                <h1 className="title"
+                    ref={titleRef}
+                >
+                    {splitTitle.map((w, i) => {
+                        return(
+                            <span key={i}>{w.text}</span>
+                        )
+                    })}
+                </h1>
             </motion.div>
             
-            <div className="hero-section body">
-                <h1 className="row first" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                    <span>Nothing</span>
-                    <span>to</span>
-                </h1>
+            <div
+                className="hero-section body"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+            >
+                {setTitleWidths()}
 
-                <h1 className="row second" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                    <span>see</span>
-                    <span>here</span>
+                <h1 className="title">
+                    {splitTitle.map((word, i) => {
+                        const width = Math.round(word.width)
+
+                        return(
+                            <span key={i} style={{width: `${width ? width + 'px' : 'auto' }`}}>{word.text}</span>
+                        )
+                    })}
                 </h1>
             </div>
 
