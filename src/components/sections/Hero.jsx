@@ -2,10 +2,10 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import '../../assets/Hero.scss';
 
-const Hero = ({children}) => {
+const Hero = (props) => {
     const ref = useRef(null)
-    const [ mousePosition, setMousePosition ] = useState({x: 0, y: 0})
-    const [ isHovered, setIsHovered ] = useState(false)
+    const { mousePosition, setMousePosition } = props
+    const { isHovered, setIsHovered } = props
     const size = isHovered ? 300 : 130
 
     const isTouch = window.matchMedia("(pointer: coarse)").matches
@@ -85,7 +85,7 @@ const Hero = ({children}) => {
                 </h1>
             </div>
 
-            {children}
+            {props.children}
         </section>
     )
 }
