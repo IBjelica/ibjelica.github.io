@@ -8,11 +8,18 @@ const Home = () => {
     const [ isHovered, setIsHovered ] = useState(null)
     const [ isLoaded, setIsLoaded ] = useState(null)
 
-    window.addEventListener('load', () => {
+
+    if (document.readyState === "complete") {
         setTimeout(() => {
             setIsLoaded(true)
         }, 3000);
-    })
+    } else {
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                setIsLoaded(true)
+            }, 3000);
+        })
+    }
 
     return (
         <Stairs isLoaded={isLoaded} >
