@@ -41,7 +41,3 @@ const Home = () => {
 }
 
 export default Home;
-
-// TODO: Loading screen da bi se prekrila naredna dva todoa
-// TODO: Skoce reci na hero sekciji kad se prvi put posle loada pomeri mis
-// TODO: inicijalna pozicija maski na load
