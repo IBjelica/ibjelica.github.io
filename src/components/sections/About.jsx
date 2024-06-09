@@ -46,8 +46,6 @@ const About = (props) => {
 
     const handleScroll = (e) => {
         setSectionTop( ref.current.getBoundingClientRect().top )
-        console.log(e.clientX)
-        // handleMouseMove()
     }
     
     useEffect(() => {
