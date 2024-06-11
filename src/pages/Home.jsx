@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Stairs from "../components/stairs";
+import Loader from "../components/loader";
 import Hero from "../components/sections/Hero";
 import About from "../components/sections/About";
 
@@ -22,7 +22,7 @@ const Home = () => {
     }
 
     return (
-        <Stairs isLoaded={isLoaded} >
+        <Loader isLoaded={isLoaded} >
             <Hero
                 mousePosition={mousePosition}
                 setMousePosition={setMousePosition}
@@ -36,7 +36,7 @@ const Home = () => {
                 setIsHovered={setIsHovered}
                 onload={() => setIsLoaded(true)}
             />
-        </Stairs>
+        </Loader>
     )
 }
 

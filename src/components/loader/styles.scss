@@ -1,6 +1,6 @@
-@import "../../assets/Variables";
+@import '../../assets/Variables';
 
-.stairs {
+.loader {
     .transition-container {
         display: flex;
         height: 100lvh;
@@ -40,7 +40,7 @@
 
 @keyframes changeFont {
     from {
-        font-family: 'Helvetica-Neue';
+        font-family: 'Helvetica Neue';
     }
     to {
         font-family: 'RabbitHole';

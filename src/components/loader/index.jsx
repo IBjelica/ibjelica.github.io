@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import './styles.scss'
-import { delay, initial } from "lodash";
 
-export default function Stairs(props) {
+export default function Loader(props) {
     const { isLoaded } = props;
 
     const anim = (variants, custom) => {
@@ -17,13 +16,12 @@ export default function Stairs(props) {
 
     const expand = {
         initial: {
-            top: 0
+            opacity: 1
         },
         enter: (i) => ({
-            top: "100%",
+            opacity: 0,
             transition: {
-                duration: 0.4,
-                delay: 0.05 * i
+                duration: 0.4
             }
         })
     }
@@ -32,7 +30,7 @@ export default function Stairs(props) {
     const loaderText = [ "", "N", "T", "S", "H", "" ]
     
     return (
-        <div className="page stairs">
+        <div className="page loader">
             <div className="transition-container">
                 {
                     [...Array(numColumns)].map((_, i) => {
