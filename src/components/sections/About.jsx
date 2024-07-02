@@ -5,8 +5,8 @@ import '../../assets/About.scss';
 import Socials from '../Socials';
 import { round } from 'lodash';
 
-const paragraph1 = "We believe that the true magic of web design and development lies beneath the surface. While others may only see the final results, we take pride in the dedication, the intricate process, and the creative gymnastics that unfold within our team."
-const paragraph2 = "Our approach revolves around a commitment to understanding and constructing value by immersing ourselves in our customers' unique needs. For us, design transcends mere aesthetics; it's a profound connection rooted in empathy, compassion, and an authentic concern for the individual we work with."
+const paragraph1 = "NTSH is a web design and development studio specializing in the digital world's nuances. We deeply explore the technical and creative elements that shape exceptional web experiences. Our meticulous attention to detail, context, and innovation ensures every client project is crafted with precision and care, delivering visually stunning and highly functional results."
+// const paragraph2 = "Our approach revolves around a commitment to understanding and constructing value by immersing ourselves in our customers' unique needs. For us, design transcends mere aesthetics; it's a profound connection rooted in empathy, compassion, and an authentic concern for the individual we work with."
 
 const About = (props) => {
     const ref = useRef(null)
@@ -68,8 +68,8 @@ const About = (props) => {
             <motion.div
                 className="about mask"
                 animate={{
-                    WebkitMaskSize: `${size}px`,
-                    WebkitMaskPosition: `${isTouch ? 50 : mousePosition.x - size/2}px ${isTouch ? 150 - sectionTop : mousePosition.y - size/2 - sectionTop }px`,
+                    WebkitMaskSize: `${isTouch ? 230 : size}px`,
+                    WebkitMaskPosition: `${isTouch ? 80 : mousePosition.x - size/2}px ${isTouch ? 280 - sectionTop : mousePosition.y - size/2 - sectionTop }px`,
                 }}
                 transition={{type: "tween", ease: "backOut"}}
             >
@@ -83,8 +83,6 @@ const About = (props) => {
                 
                 <div className="paragraphs">
                     <Paragraph text={paragraph1} />
-
-                    <Paragraph text={paragraph2} />
                 </div>
 
                 <Socials />
@@ -115,9 +113,7 @@ const About = (props) => {
                 </h2>
                 
                 <div className="paragraphs">
-                    <Paragraph text={paragraph1} start="0.9" end="0.45" />
-
-                    <Paragraph text={paragraph2} start="0.8" end="0.62" />
+                    <Paragraph text={paragraph1} start="0.9" end="0.6" />
                 </div>
 
                 <Socials setIsHovered={setIsHoveredSocials} />

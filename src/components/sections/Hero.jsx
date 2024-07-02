@@ -76,7 +76,7 @@ const Hero = (props) => {
 
                 <h1 className="title">
                     {splitTitle.map((word, i) => {
-                        const width = Math.round(word.width)
+                        const width = word.width
 
                         return(
                             <span key={i} style={{width: `${width ? width + 'px' : 'auto' }`}}>{word.text}</span>
